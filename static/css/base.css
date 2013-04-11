@@ -76,6 +76,11 @@ footer ul li a {
     border-radius: 25px;
 }
 
+footer ul li a:hover {
+    background: #fff;
+    color: #5CC4EC;
+}
+
 .background {
     position: fixed;
     width: 100%;
