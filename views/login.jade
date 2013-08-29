@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  form(action='/login' method='post' role='form')
+    .form-group
+      input(type='text' name='username' class='form-control' placeholder='username')
+    
+    .form-group
+      input(type='password' name='password' class='form-control' placeholder='password')
+  
+    .form-group
+      button(type='submit' class='btn btn-primary') Log In

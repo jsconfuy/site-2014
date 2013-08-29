@@ -13,7 +13,16 @@ html
         .navbar-collapse.collapse
           ul.nav.navbar-nav.navbar-right
             li
+              a(href='/venue') Venue
+            li
               a(href='/') Register
+            li
+              a(href='/speakers') Speakers
+            li
+              a(href='/proposals') Proposals
       .row
         .col-lg-12
           block content
+      footer.row
+        .col-lg-2.col-md-offset-10
+          a(href='/admin/speakers') Speaker Area
