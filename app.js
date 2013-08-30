@@ -4,6 +4,7 @@
  */
 
 var express = require('express');
+var flash = require('express-flash');
 var routes = require('./routes');
 var admin = require('./routes/admin');
 var http = require('http');
@@ -28,7 +29,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  if(id == '1') done(null, user);
+  if(id == '1') done(null, id);
   else done('User can not be found on the database');
 });
 
@@ -46,9 +47,11 @@ app.use(express.cookieParser());
 app.use(express.session({ secret: 'kjs,.liuiyoaslasiouo' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use(app.router);
 app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // development only
 if ('development' == app.get('env')) {
@@ -64,7 +67,14 @@ app.get('/login', admin.login);
 
 //Administration
 app.get('/logout', admin.logout);
-app.post('/login', passport.authenticate('local', {successRedirect: '/', failureRedirect: '/login', failureFlash: true }));
+app.post('/login', 
+  passport.authenticate('local', 
+    {successRedirect: '/', 
+    failureRedirect: '/login', 
+    failureFlash: 'Invalid username or password', 
+    successFlash: 'Welcome!' }
+  )
+);
 app.get('/admin/speakers', loginUtils.ensureLoggedIn(), admin.speakers);
 
 http.createServer(app).listen(app.get('port'), function(){

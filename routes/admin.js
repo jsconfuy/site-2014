@@ -8,5 +8,6 @@ exports.login = function(request, response) {
 
 exports.logout = function(request, response) {
   request.logout();
+  request.flash('info', 'Logged Out succesfully');
   response.redirect('/');
 }
