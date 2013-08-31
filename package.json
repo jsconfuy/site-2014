@@ -12,6 +12,7 @@
     "passport": "*",
     "passport-local": "*",
     "connect-ensure-login": "*",
-    "express-flash": "*"
+    "express-flash": "*",
+    "mongoose": "latest"
   }
 }

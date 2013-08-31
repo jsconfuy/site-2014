@@ -19,9 +19,9 @@ html
             li
               a(href='/speakers') Speakers
             li
-              a(href='/proposals') Proposals
+              a(href='/proposals/new') Proposals
 
-      -if(messages.info || messages.error || messages.success)
+      - if(messages.info || messages.error || messages.success)
         .row
           .col-lg-12
             - if (messages.info)
@@ -38,5 +38,7 @@ html
         .col-lg-12
           block content
       footer.row
-        .col-lg-2.col-md-offset-10
+        .col-lg-4.col-md-offset-8
+          a(href='/proposals') Admin Area
+          &nbsp;
           a(href='/admin/speakers') Speaker Area
