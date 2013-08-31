@@ -1,0 +1,54 @@
+extends ../layout
+
+block content
+  
+  h1 New Proposal
+  
+  - if (error)
+    .alert.alert-danger Please verify the errors above
+  
+  form(action='/proposals' method='post' role='form')
+    .form-group(class= error && error.errors.topic ? 'has-error' : '' )
+      input(type='text' name='proposal[topic]' class='form-control' placeholder='* Topic')
+      - if(error && error.errors.topic)
+        .help-block= error.errors.topic.message
+      
+    .form-group(class= error && error.errors.summary ? 'has-error' : '' )
+      textarea(type='text' name='proposal[summary]' class='form-control' placeholder='* Summary')
+      - if(error && error.errors.summary)
+        .help-block= error.errors.summary.message
+        
+    .form-group(class= error && error.errors.name ? 'has-error' : '' )
+      input(type='text' name='proposal[name]' class='form-control' placeholder='* Name')
+      - if(error && error.errors.name)
+        .help-block= error.errors.name.message
+        
+    .form-group(class= error && error.errors.email ? 'has-error' : '' )
+      input(type='text' name='proposal[email]' class='form-control' placeholder='* Email')
+      - if(error && error.errors.email)
+        .help-block= error.errors.email.message
+      
+    .form-group(class= error && error.errors.city ? 'has-error' : '' )
+      input(type='text' name='proposal[city]' class='form-control' placeholder='* City')
+      - if(error && error.errors.city)
+        .help-block= error.errors.city.message
+        
+    .form-group
+      input(type='text' name='proposal[country]' class='form-control' placeholder='Country')
+      
+    .form-group
+      input(type='text' name='proposal[twitterUrl]' class='form-control' placeholder='Twitter Url')
+    
+    .form-group
+      input(type='text' name='proposal[githubUrl]' class='form-control' placeholder='Github Url')
+    
+    .form-group
+      input(type='text' name='proposal[blogUrl]' class='form-control' placeholder='Blog Url')
+    
+    .checkbox
+      input(type='checkbox' name='companyPays' )
+      label(for='companyPays') My company can pay for my travels and hotel
+        
+      
+    .form-group
+      button(type='submit' class='btn btn-primary') Submit
