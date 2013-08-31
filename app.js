@@ -1,38 +1,26 @@
-
 /**
  * Module dependencies.
  */
 
 var express = require('express');
 var flash = require('express-flash');
+var path = require('path');
 var routes = require('./routes');
 var admin = require('./routes/admin');
+var proposals = require('./routes/proposals');
+var config = require('./config');
 var http = require('http');
-var path = require('path');
 var passport = require('passport');
 var loginUtils = require('connect-ensure-login');
-var LocalStrategy = require('passport-local').Strategy;
+var mongoose = require('mongoose');
 
-//Passport Configuration
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    if(username == 'admin' && password == 'admin') {
-      return done(null, {username: 'admin', id: '1'});
-    } else {
-      return done(null, false, { message: 'Incorrect username or password.' });
-    }
-  }
-));
+//Connect to the database
+mongoose.connect('mongodb://localhost/jsconfuy');
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
+//Configure passport
+config.passport(passport);
 
-passport.deserializeUser(function(id, done) {
-  if(id == '1') done(null, id);
-  else done('User can not be found on the database');
-});
-
+//Create the express app
 var app = express();
 
 // all environments
@@ -58,14 +46,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+//Routes
+
 //Public
 app.get('/', routes.index);
 app.get('/speakers', routes.speakers);
-app.get('/proposals', routes.proposals);
 app.get('/venue', routes.venue);
-app.get('/login', admin.login);
 
-//Administration
+//Auth
+app.get('/login', admin.login);
 app.get('/logout', admin.logout);
 app.post('/login', 
   passport.authenticate('local', 
@@ -75,8 +64,18 @@ app.post('/login',
     successFlash: 'Welcome!' }
   )
 );
+
+//Proposals
+app.get('/proposals/new', proposals.new);
+app.get('/proposals', loginUtils.ensureLoggedIn(), proposals.index);
+app.post('/proposals', proposals.create);
+app.get('/proposals/:id/delete', loginUtils.ensureLoggedIn(), proposals.destroy);
+app.get('/proposals/:id', loginUtils.ensureLoggedIn(), proposals.show);
+
+//Administration
 app.get('/admin/speakers', loginUtils.ensureLoggedIn(), admin.speakers);
 
+//Server creation
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
