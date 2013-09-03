@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  
+  table.table
+    thead
+      tr
+        th State
+        th Username
+        th Actions
+    tbody
+      - each user in users
+        tr
+          td
+            - if(!user.active)
+              .label.label-danger Removed
+          td= user.username
+          td
+            a(href='/users/' + user._id).btn.btn-info View
+            &nbsp;
+            a(href='/users/' + user._id + '/delete').btn.btn-danger Delete

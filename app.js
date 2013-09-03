@@ -8,11 +8,13 @@ var path = require('path');
 var routes = require('./routes');
 var admin = require('./routes/admin');
 var proposals = require('./routes/proposals');
+var users = require('./routes/users');
 var config = require('./config');
 var http = require('http');
 var passport = require('passport');
 var loginUtils = require('connect-ensure-login');
 var mongoose = require('mongoose');
+var User = require('./models/user');
 
 //Connect to the database
 mongoose.connect('mongodb://localhost/jsconfuy');
@@ -44,6 +46,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
+
+  //Seed admin user for development
+  User.findOne({username: 'admin'}, function(err, user){
+    if(err) { console.log('Error looking uo for the admin user'); }
+
+    if(!user) { new User({username: 'admin', password: 'admin', active: true}).save(function(err) { if(err) { console.log(err); } }); }
+
+    if(user) { user.active = true; user.save(function(err) { if(err) { console.log(err); } }); }
+  });
 }
 
 //Routes
@@ -71,6 +82,11 @@ app.get('/proposals', loginUtils.ensureLoggedIn(), proposals.index);
 app.post('/proposals', proposals.create);
 app.get('/proposals/:id/delete', loginUtils.ensureLoggedIn(), proposals.destroy);
 app.get('/proposals/:id', loginUtils.ensureLoggedIn(), proposals.show);
+
+//Users
+app.get('/users/new', loginUtils.ensureLoggedIn(), users.new);
+app.get('/users', loginUtils.ensureLoggedIn(), users.index);
+app.post('/users', loginUtils.ensureLoggedIn(), users.create);
 
 //Administration
 app.get('/admin/speakers', loginUtils.ensureLoggedIn(), admin.speakers);

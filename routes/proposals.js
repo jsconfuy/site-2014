@@ -36,7 +36,7 @@ exports.index = function(request, response) {
       response.render('proposals/index.jade', {proposals: proposals});
     }
   });
-}
+};
 
 exports.destroy = function(request, response) {
   Proposal.findOneAndUpdate({_id: request.param('id')}, {active: false}, function(err){
