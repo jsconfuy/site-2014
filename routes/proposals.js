@@ -1,5 +1,16 @@
 var Proposal = require('../models/proposal');
 
+exports.index = function(request, response) {
+  Proposal.find({active: true}, function (err, proposals) {
+    if (err) {
+      request.flash('error', 'There was an error retriving proposals');
+      response.redirect('/admin/proposals');
+    } else {
+      response.render('proposals/index.jade', {proposals: proposals});
+    }
+  });
+};
+
 exports.new = function(request, response) {
   response.render('proposals/new.jade');
 };
@@ -20,20 +31,9 @@ exports.show = function(request, response) {
   Proposal.findById(request.param('id'), function (err, proposal) {
     if (err) {
       request.flash('error', 'There is no such proposal in the database');
-      response.redirect('/');
+      response.redirect('/admin/proposals');
     } else {
       response.render('proposals/show.jade', {proposal: proposal});
-    }
-  });
-};
-
-exports.index = function(request, response) {
-  Proposal.find({active: true}, function (err, proposals) {
-    if (err) {
-      request.flash('error', 'There was an error retriving proposals');
-      response.redirect('/');
-    } else {
-      response.render('proposals/index.jade', {proposals: proposals});
     }
   });
 };
@@ -45,6 +45,6 @@ exports.destroy = function(request, response) {
     } else {
       request.flash('info', 'Proposal was correctly removed');
     }
-    response.redirect('/proposals');
+    response.redirect('/admin/proposals');
   });
 };

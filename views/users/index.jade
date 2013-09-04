@@ -1,12 +1,19 @@
 extends ../layout
 
 block content
-  
+
+  .action-link
+    a(href='/admin') Back to admin list
+
+  .action-link
+    a(href='/admin/users/new') Create new user
+
   table.table
     thead
       tr
         th State
         th Username
+        th Role
         th Actions
     tbody
       - each user in users
@@ -15,7 +22,8 @@ block content
             - if(!user.active)
               .label.label-danger Removed
           td= user.username
+          td= user.role
           td
-            a(href='/users/' + user._id).btn.btn-info View
+            a(href='/admin/users/' + user._id + '/edit').btn.btn-info Edit
             &nbsp;
-            a(href='/users/' + user._id + '/delete').btn.btn-danger Delete
+            a(href='/admin/users/' + user._id + '/delete').btn.btn-danger Delete

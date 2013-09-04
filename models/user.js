@@ -4,10 +4,16 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 var userSchema = new Schema({
-  username: { type: String, required: true, index: {unique: true } },
+  username: { type: String, required: true, index: { unique: true } },
   password: { type: String, required: true },
+  role: {type: String, required: true },
   active: {type: Boolean, default: true }
 });
+
+//TODO: Not working yet, need to investigate
+userSchema.path('role').validate(function (value) {
+  return /admin|speaker/i.test(value);
+}, 'The role should be admin or speaker');
 
 userSchema.pre('save', function(next) {
   var user = this;
@@ -30,12 +36,19 @@ userSchema.pre('save', function(next) {
   });
 });
 
-
 userSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);
   });
+};
+
+userSchema.methods.isAdmin = function() {
+  return this.role == 'admin';
+};
+
+userSchema.methods.isSpeaker = function() {
+  return this.role == 'speaker';
 };
 
 module.exports = mongoose.model('User', userSchema);
