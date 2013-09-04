@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+
+  .action-link
+    a(href='/admin/users') Back to user list
+
+  h1= 'Edit ' + user.username
+
+  - if (error)
+    .alert.alert-danger Please verify the errors above
+
+  form(action='/admin/users' method='post' role='form')
+    input(type='hidden' name='_method' value='put')
+
+    input(type='hidden' name='user[id]' value=user._id)
+
+    .form-group(class= error && error.errors.username ? 'has-error' : '' )
+      input(type='text' name='user[username]' class='form-control' placeholder='* Username' value=user.username)
+        - if(error && error.errors.username)
+          .help-block= error.errors.username.message
+
+    .form-group(class= error && error.errors.role ? 'has-error' : '' )
+      input(type='text' name='user[role]' class='form-control' placeholder='* Role' value=user.role)
+      - if(error && error.errors.role)
+        .help-block= error.errors.role.message
+
+    .form-group
+      button(type='submit' class='btn btn-primary') Submit

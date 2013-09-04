@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+
+  .action-link
+    a(href='/admin/users') Back to user list
+
+  h1 New User
+  
+  - if (error)
+    .alert.alert-danger Please verify the errors bellow
+  
+  form(action='/admin/users' method='post' role='form')
+    .form-group(class= error && error.errors.username ? 'has-error' : '' )
+      input(type='text' name='user[username]' class='form-control' placeholder='* Username')
+      - if(error && error.errors.username)
+        .help-block= error.errors.username.message
+      
+    .form-group(class= error && error.errors.password ? 'has-error' : '' )
+      input(type='password' name='user[password]' class='form-control' placeholder='* Password')
+      - if(error && error.errors.password)
+        .help-block= error.errors.password.message
+        
+    .form-group(class= error && error.errors.passwordConfirmation ? 'has-error' : '' )
+      input(type='password' name='user[passwordConfirmation]' class='form-control' placeholder='* Confirmation')
+      - if(error && error.errors.passwordConfirmation)
+        .help-block= error.errors.passwordConfirmation.message
+
+    .form-group(class= error && error.errors.role ? 'has-error' : '' )
+      input(type='text' name='user[role]' class='form-control' placeholder='* Role')
+      - if(error && error.errors.role)
+        .help-block= error.errors.role.message
+      
+    .form-group
+      button(type='submit' class='btn btn-primary') Submit
