@@ -1,7 +1,10 @@
 extends ../layout
 
 block content
-  
+
+  .action-link
+    a(href='/admin') Back to admin list
+
   table.table
     thead
       tr
@@ -19,8 +22,8 @@ block content
       - each proposal in proposals
         tr
           td
-            - if(!proposal.active)
-              .label.label-danger Removed
+          - if(!proposal.active)
+            .label.label-danger Removed
           td= proposal.topic
           td= proposal.name
           td= proposal.email
@@ -30,6 +33,6 @@ block content
           td= proposal.city
           td= proposal.country
           td
-            a(href='/proposals/' + proposal._id).btn.btn-info View
+            a(href='/admin/proposals/' + proposal._id).btn.btn-info View
             &nbsp;
-            a(href='/proposals/' + proposal._id + '/delete').btn.btn-danger Delete
+            a(href='/admin/proposals/' + proposal._id + '/delete').btn.btn-danger Delete

@@ -13,6 +13,7 @@
     "passport-local": "*",
     "connect-ensure-login": "*",
     "express-flash": "*",
-    "mongoose": "latest"
+    "mongoose": "latest",
+    "bcrypt": "*"
   }
 }
