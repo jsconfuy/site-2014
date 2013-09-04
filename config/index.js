@@ -11,9 +11,9 @@ exports.passport = function(passport) {
           if(!user) { return done(null, false, { message: 'Incorrect username.' }); }
 
           user.comparePassword(password, function(err, isMatch) {
-            if(err) { console.log(err); }
+            if(err) { done(null, false, { message: err }); }
             if(isMatch) { return done(null, user); }
-            else { return done(null, false, { message: 'Incorrect password.' }) }
+            else { return done(null, false, { message: 'Incorrect password.' }); }
           });
 
         });
@@ -21,15 +21,19 @@ exports.passport = function(passport) {
   ));
 
   passport.serializeUser(function(user, done) {
-    done(null, user._id);
+    var sessionUser = { _id: user._id, username: user.username };
+    if(user.firstName) sessionUser.firstName = user.firstName;
+    if(user.lastName) sessionUser.lastName = user.lastName;
+    if(user.email) sessionUser.email = user.email;
+    done(null, sessionUser);
   });
 
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user){
+  passport.deserializeUser(function(user, done) {
+    User.findById(user._id, function(err, user){
       if(err) {
         done('User can not be found on the database');
       } else {
-        done(null, id);
+        done(null, user);
       }
     });
   });
