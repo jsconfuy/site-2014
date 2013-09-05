@@ -1,7 +1,7 @@
 var User = require('../models/user');
 
 exports.index = function(request, response) {
-  User.find({active: true}, function (err, users) {
+  User.find(function (err, users) {
     if (err) {
       request.flash('error', 'There is no such user in the database');
       response.redirect('/');

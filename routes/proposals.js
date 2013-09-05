@@ -1,7 +1,7 @@
 var Proposal = require('../models/proposal');
 
 exports.index = function(request, response) {
-  Proposal.find({active: true}, function (err, proposals) {
+  Proposal.find(function (err, proposals) {
     if (err) {
       request.flash('error', 'There was an error retriving proposals');
       response.redirect('/admin/proposals');

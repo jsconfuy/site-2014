@@ -116,6 +116,7 @@ app.get('/admin/users/new', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin
 app.post('/admin/users', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(), users.create);
 app.get('/admin/users/:id/edit', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(), users.edit);
 app.put('/admin/users', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(), users.update);
+app.get('/admin/users/:id/delete', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(), users.destroy);
 
 //Speakers
 app.get('/admin/speakers', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(), admin.speakers);
