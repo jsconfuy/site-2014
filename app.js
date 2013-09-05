@@ -85,7 +85,7 @@ app.post('/login',
     loginUtils.ensureLoggedOut(),
     passport.authenticate('local',
       { session: true,
-        successRedirect: '/',
+        successReturnToOrRedirect: '/',
         failureRedirect: '/login',
         failureFlash: 'Invalid username or password',
         successFlash: 'Welcome!' }
@@ -103,7 +103,7 @@ app.post('/proposals', proposals.create);
 
 //Administration
 
-app.get('/admin', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(), admin.index);
+app.get('/admin', loginUtils.ensureLoggedIn('/login'), authUtils.ensureIsAdmin(), admin.index);
 
 //Proposals
 app.get('/admin/proposals', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(),  proposals.index);
