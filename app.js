@@ -63,7 +63,15 @@ if ('development' == app.get('env')) {
   });
 }
 
+
+//Filter
+app.get('*', function(request, response, next){
+  response.locals.loggedIn = request.user ? request.user.username : false;
+  next();
+});
+
 //Routes
+
 
 //Pages
 app.get('/', routes.index);
@@ -76,10 +84,11 @@ app.get('/logout', auth.logout);
 app.post('/login',
     loginUtils.ensureLoggedOut(),
     passport.authenticate('local',
-      {successRedirect: '/',
-      failureRedirect: '/login',
-      failureFlash: 'Invalid username or password',
-      successFlash: 'Welcome!' }
+      { session: true,
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: 'Invalid username or password',
+        successFlash: 'Welcome!' }
     )
 );
 

@@ -1,0 +1,21 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+  body
+    .container
+      include navbar
+      include messages
+      
+      .row  
+        aside.col-lg-2
+          include sidebar
+        section.col-lg-10
+          block content
+          
+      footer.row
+        .col-lg-12
+          include footer
