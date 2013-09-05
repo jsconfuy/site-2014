@@ -92,6 +92,11 @@ app.post('/login',
     )
 );
 
+app.get('*', function(request, response, next) {
+  response.locals['currentUrl'] = request.path;
+  next();
+});
+
 //Proposals
 app.get('/proposals/new', proposals.new);
 app.post('/proposals', proposals.create);

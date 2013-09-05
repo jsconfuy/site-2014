@@ -2,12 +2,11 @@ extends ../layout/admin
 
 block content
 
+  h1 Users
+  
   .action-link
-    a(href='/admin') Back to admin list
-
-  .action-link
-    a(href='/admin/users/new') Create new user
-
+    a.btn.btn-success(href='/admin/users/new') Create new user
+  
   table.table
     thead
       tr
@@ -27,3 +26,4 @@ block content
             a(href='/admin/users/' + user._id + '/edit').btn.btn-info Edit
             &nbsp;
             a(href='/admin/users/' + user._id + '/delete').btn.btn-danger Delete
+            

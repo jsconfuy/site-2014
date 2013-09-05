@@ -1,5 +1,5 @@
-ul.nav.nav-pills.nav-stacked
-  li
-    a(href='/admin/users') User List
-  li
-    a(href='/admin/proposals') Proposal List
+.list-group
+  - cssClass = currentUrl.indexOf('admin/users') > 0 ? 'active' : ''
+  a.list-group-item(class=cssClass href='/admin/users') User List
+  - cssClass = currentUrl.indexOf('admin/proposals') > 0 ? 'active' : ''
+  a.list-group-item(class=cssClass href='/admin/proposals') Proposal List
