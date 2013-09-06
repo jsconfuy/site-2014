@@ -12,14 +12,14 @@ block content
 
     input(type='hidden' name='user[id]' value=user._id)
 
-    .form-group(class= error && error.errors.username ? 'has-error' : '' )
+    .form-group(class= error && error.errors && error.errors.username ? 'has-error' : '' )
       input(type='text' name='user[username]' class='form-control' placeholder='* Username' value=user.username)
-        - if(error && error.errors.username)
+        - if(error && error.errors && error.errors.username)
           .help-block= error.errors.username.message
 
-    .form-group(class= error && error.errors.role ? 'has-error' : '' )
+    .form-group(class= error && error.errors && error.errors.role ? 'has-error' : '' )
       input(type='text' name='user[role]' class='form-control' placeholder='* Role' value=user.role)
-      - if(error && error.errors.role)
+      - if(error && error.errors && error.errors.role)
         .help-block= error.errors.role.message
 
     .form-group

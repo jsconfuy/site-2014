@@ -10,13 +10,17 @@ var userSchema = new Schema({
   active: { type: Boolean, default: true },
   firstName: {type: String },
   lastName: {type: String },
-  email: {type: String }
+  email: {type: String },
+  passwordConfirmation: {}
 });
 
-//TODO: Not working yet, need to investigate
 userSchema.path('role').validate(function (value) {
   return /admin|speaker/i.test(value);
 }, 'The role should be admin or speaker');
+
+userSchema.path('passwordConfirmation').validate(function (value) {
+  return this.password == value;
+}, 'Password doesn\'t match');
 
 userSchema.pre('save', function(next) {
   var user = this;

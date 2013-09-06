@@ -3,8 +3,8 @@ var User = require('../models/user');
 exports.index = function(request, response) {
   User.find(function (err, users) {
     if (err) {
-      request.flash('error', 'There is no such user in the database');
-      response.redirect('/');
+      request.flash('error', 'There was an unexpected error');
+      response.redirect('/admin/users');
     } else {
       response.render('users/index.jade', {users: users});
     }
@@ -32,7 +32,7 @@ exports.edit = function(request, response) {
   User.findById(request.param('id'), function (err, user) {
     if (err) {
       request.flash('error', 'There is no such user in the database');
-      response.redirect('/');
+      response.redirect('/admin/users');
     } else {
       response.render('users/edit.jade', {user: user});
     }
@@ -42,13 +42,22 @@ exports.edit = function(request, response) {
 exports.update = function(request, response) {
   var userParams = request.param('user');
 
-  User.findOneAndUpdate({_id: userParams.id}, userParams, function (err, user) {
-    if (err) {
-      request.flash('error', 'There is no such user in the database');
-      response.redirect('/');
-    } else {
-      request.flash('info', 'The user was correctly updated');
-      response.redirect('/admin/users');
+  User.findById(userParams.id, function (err, user) {
+    if (err) { request.flash('error', 'There was an error retriving the user'); } 
+    
+    if(!user) { request.flash('error', 'There is no such user in the database'); }
+    
+    if(user) { 
+      user.set(userParams);
+      user.save(function(err) {
+        if(err) {
+          console.log(err);
+          response.render('users/edit.jade', {user: user, error: err});
+        } else { 
+          request.flash('info', 'The user was correctly updated');
+          response.redirect('/admin/users');
+        }
+      });
     }
   });
 };

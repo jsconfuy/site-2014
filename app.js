@@ -49,6 +49,17 @@ app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+function filter(request, response, next){
+  response.locals.loggedIn = request.user ? request.user.username : false;
+  response.locals.currentUrl = request.path;
+  next();
+}
+
+//Filter
+app.get('*', filter);
+app.post('*', filter);
+app.put('*', filter);
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
@@ -61,14 +72,7 @@ if ('development' == app.get('env')) {
 
     if(user) { user.active = true; user.save(function(err) { if(err) { console.log(err); } }); }
   });
-}
-
-
-//Filter
-app.get('*', function(request, response, next){
-  response.locals.loggedIn = request.user ? request.user.username : false;
-  next();
-});
+};
 
 //Routes
 
@@ -92,18 +96,13 @@ app.post('/login',
     )
 );
 
-app.get('*', function(request, response, next) {
-  response.locals['currentUrl'] = request.path;
-  next();
-});
-
 //Proposals
 app.get('/proposals/new', proposals.new);
 app.post('/proposals', proposals.create);
 
 //Administration
 
-app.get('/admin', loginUtils.ensureLoggedIn('/login'), authUtils.ensureIsAdmin(), admin.index);
+app.get('/admin', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(), admin.index);
 
 //Proposals
 app.get('/admin/proposals', loginUtils.ensureLoggedIn(), authUtils.ensureIsAdmin(),  proposals.index);
