@@ -20,7 +20,6 @@ exports.create = function(request, response) {
   var proposal = new Proposal(request.param('proposal'));
   proposal.save(function(err){    
     if(err) {
-      console.log(err);
       response.render('proposals/new.jade', {error: errorUtils.readableErrors(err)});      
     } else {
       request.flash('info', 'The proposal has been submited correctly, thanks!');

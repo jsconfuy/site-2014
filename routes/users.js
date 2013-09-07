@@ -52,7 +52,6 @@ exports.update = function(request, response) {
       user.set(userParams);
       user.save(function(err) {
         if(err) {
-          console.log(err);
           response.render('users/edit.jade', {user: user, error: errorUtils.readableErrors(err)});
         } else { 
           request.flash('info', 'The user was correctly updated');
