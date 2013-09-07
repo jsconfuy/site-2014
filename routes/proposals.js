@@ -1,4 +1,5 @@
 var Proposal = require('../models/proposal');
+var errorUtils = require('../utils/error');
 
 exports.index = function(request, response) {
   Proposal.find(function (err, proposals) {
@@ -19,7 +20,8 @@ exports.create = function(request, response) {
   var proposal = new Proposal(request.param('proposal'));
   proposal.save(function(err){    
     if(err) {
-      response.render('proposals/new.jade', {error: err});      
+      console.log(err);
+      response.render('proposals/new.jade', {error: errorUtils.readableErrors(err)});      
     } else {
       request.flash('info', 'The proposal has been submited correctly, thanks!');
       response.redirect('/');

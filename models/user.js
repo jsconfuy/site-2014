@@ -16,11 +16,11 @@ var userSchema = new Schema({
 
 userSchema.path('role').validate(function (value) {
   return /admin|speaker/i.test(value);
-}, 'The role should be admin or speaker');
+}, 'include');
 
 userSchema.path('passwordConfirmation').validate(function (value) {
   return this.password == value;
-}, 'Password doesn\'t match');
+}, 'match');
 
 userSchema.pre('save', function(next) {
   var user = this;

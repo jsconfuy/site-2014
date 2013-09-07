@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var proposalSchema = new Schema({
-  topic: {type: String, required: [true, '{path} is a required field.']},
+  topic: {type: String, required: true},
   summary: {type: String, required: true},
   name: {type: String, required: true},
   email: {type: String, required: true},

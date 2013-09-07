@@ -1,0 +1,33 @@
+mixin bootstrap_form(action, method, error)
+  - realMethod = method == 'put' ? 'post' : method
+  form(action=action method=realMethod  class=attributes.class role=attributes.role ? attributes.role : 'from')
+    
+    - if(method == 'put')
+      input(type='hidden' name='_method' value='put') 
+    
+    - if (error)
+      .alert.alert-danger Please verify the errors bellow
+        - if(error.err)
+          br
+          = error.err
+          
+    - if(block)
+      block
+
+mixin bootstrap_field(resource, field, label)
+  - if(attributes.type && attributes.type == 'hidden')
+    input(type=attributes.type name= resource + '[' + field + ']' value=attributes.value)
+  - else if(attributes.type && attributes.type == 'textarea')
+    .form-group(class= error && error.errors && error.errors[field] ? 'has-error' : '' )
+      textarea(name= resource + '[' + field + ']' class='form-control' placeholder=label value=attributes.value)
+      - if(error && error.errors && error.errors[field] && error.errors[field].message)
+        .help-block= error.errors[field].message
+  - else
+    .form-group(class= error && error.errors && error.errors[field] ? 'has-error' : '' )
+      input(type=attributes.type ? attributes.type : 'text' name= resource + '[' + field + ']' class='form-control' placeholder=label value=attributes.value)
+      - if(error && error.errors && error.errors[field] && error.errors[field].message)
+        .help-block= error.errors[field].message
+      
+mixin bootstrap_default_action(title)
+  .form-actions
+    button(type='submit' class='btn btn-primary')= title
