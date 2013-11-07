@@ -1,15 +1,43 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
 
 @font-face {
-    font-family: 'entypo-social';
-    src: url('../font/entypo-social.eot');
-    src: url('../font/entypo-social.eot?#iefix') format('embedded-opentype'),
-         url('../font/entypo-social.woff') format('woff'),
-         url('../font/entypo-social.ttf') format('truetype'),
-         url('../font/entypo-social.svg#entypo-social') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'icomoon';
+	src:url('../font/icomoon.eot');
+	src:url('../font/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../font/icomoon.ttf') format('truetype'),
+		url('../font/icomoon.woff') format('woff'),
+		url('../font/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
+
+[class*="icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+	content: "\e600";
+}
+.icon-facebook:before {
+	content: "\e601";
+}
+.icon-googleplus:before {
+	content: "\e602";
+}
+.icon-github:before {
+	content: "\e603";
+}
+
 
 html, body {
     height: 100%;
@@ -67,13 +95,15 @@ footer ul li a {
     vertical-align: middle;
     background: #5CC4EC;
     color: #fff;
-    font-family: 'entypo-social';
-    font-weight: normal;
     text-decoration: none;
     font-size: 40px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
+}
+
+footer ul li a span {
+	font-size: 18px;
 }
 
 footer ul li a:hover {
