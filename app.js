@@ -23,7 +23,7 @@ var mongoose = require('mongoose');
 var User = require('./models/user');
 
 //Connect to the database
-mongoose.connect('mongodb://localhost/jsconfuy');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/jsconfuy');
 
 //Configure passport
 config.passport(passport);
