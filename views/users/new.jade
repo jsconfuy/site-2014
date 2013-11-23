@@ -1,0 +1,18 @@
+extends ../layout/admin
+include ../mixins/_forms
+
+block content
+
+  h1 New User
+  
+  +bootstrap_form('/admin/users', 'post', error)(role='form')
+  
+    +bootstrap_field('user', 'username', '* Username')
+    
+    +bootstrap_field('user', 'password', '* Password')(type='password')
+    
+    +bootstrap_field('user', 'passwordConfirmation', '* Confirmation')(type='password')
+    
+    +bootstrap_field('user', 'role', '* Role')
+    
+    +bootstrap_default_action('Submit')

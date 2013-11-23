@@ -1,0 +1,31 @@
+extends ../layout/admin
+
+block content
+
+  h1 Proposals
+
+  table.table
+    thead
+      tr
+        th State
+        th Topic
+        th Person Name
+        th Person Email
+        th City
+        th Country
+        th Actions
+    tbody
+      - each proposal in proposals
+        tr
+          td
+            - if(!proposal.active)
+              .label.label-danger Rejected
+          td= proposal.topic
+          td= proposal.name
+          td= proposal.email
+          td= proposal.city
+          td= proposal.country
+          td
+            a(href='/admin/proposals/' + proposal._id).btn.btn-info View
+            &nbsp;
+            a(href='/admin/proposals/' + proposal._id + '/delete').btn.btn-danger Reject

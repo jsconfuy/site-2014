@@ -1,0 +1,37 @@
+extends ../layout/admin
+
+block content
+  
+  .panel.panel-default
+    .panel-heading
+      = 'Proposal from '
+      b= proposal.name
+    .panel-body
+      h3 Proposal Data
+      dl
+        dt Topic:
+        dd= proposal.topic
+        dt Summary:
+        dd= proposal.summary        
+        dt Company pays for the trip and/or the stay:
+        dd= proposal.companyPays ? 'yes' : 'no'
+      
+      h3 Personal Data
+      dl
+        dt Name:
+        dd= proposal.name
+        dt Email:
+        dd= proposal.email
+        - if(proposal.twitterUrl)
+          dt Twitter:
+          dd= proposal.twitterUrl
+        - if(proposal.githubUrl)
+          dt Github:
+          dd= proposal.githubUrl
+        - if(proposal.blogUrl)
+          dt Blog:
+          dd= proposal.blogUrl
+      
+      .form-actions
+        a.btn.btn-danger(href='/admin/proposals/' + proposal._id + '/delete') Reject
+        
