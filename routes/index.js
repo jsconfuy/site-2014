@@ -1,11 +1,11 @@
-exports.index = function(req, res){
-  res.render('index');
-};
+/**
+ * Home page router
+ */
 
-exports.speakers = function(req, res) {
-  res.render('speakers');
-};
-
-exports.venue = function(req, res) {
-  res.render('venue');
+exports.init = function (app) {
+  app.get('/', function (req, res) {
+    res.render('index', {
+      title: 'Express-simple'
+    });
+  });
 };
