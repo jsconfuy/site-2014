@@ -1,7 +1,10 @@
 /**
  * Module dependencies.
  */
-
+try {
+    require('strong-agent').profile();   
+}catch(e){
+}
 var http = require('http');
 var express = require('express');
 var flash = require('express-flash');
