@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express'),
     http = require('http'),
     fs = require('fs'),
@@ -11,7 +6,6 @@ var express = require('express'),
 
 var app = express();
 
-// all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -24,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res) {
   res.status(404).render('404', {title: 'Not found, 404'});
 });
-// development only
+
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }

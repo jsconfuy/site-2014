@@ -1,0 +1,44 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title JSConf - Montevideo, Uruguay
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+
+    link(rel='stylesheet', type='text/css', href='fonts/chunkfive/stylesheet.css')
+    link(rel='stylesheet', type='text/css', href='fonts/dosis/stylesheet.css')
+    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='css/font-awesome.css')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    link(rel='stylesheet', type='text/css', href='css/margins-paddings.css')
+    link(rel='stylesheet', type='text/css', href='css/responsive.css')
+    link(rel='stylesheet', type='text/css', href='css/fotorama.css')
+    link(rel='stylesheet', type='text/css', href='css/parallax_banner_style.css')
+    
+    script(src='vendor/jquery/jquery.js')
+
+  body
+    .full-width-container.text-center.row.relative.main-body-wrap
+      .peter-river
+        block header
+          include parts/header
+        block content
+        block footer
+          include parts/footer
+   .clearfix
+    script(src="js/jquery-color.js")
+    script(src='js/jquery.easing.js')
+    script(src='js/fotorama.js')
+    script
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-40076270-1');ga('send','pageview');
+    script(src='js/common.js')
+    script(src='js/main.js')
