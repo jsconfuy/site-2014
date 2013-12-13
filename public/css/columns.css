@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content_wrapper {
+	width:100%;
+	max-width:960px;
+	margin:0 auto;
+}
+
+.column.column-last,
+.column36.column-last,
+.column48.column-last,
+.column60.column-last {
+	margin-right:0;
+}
+
+/* margin 24px */
+
+.column {float:left; margin-right:24px;}
+.column-1-2 {width:468px;}
+.column-1-3 {width:304px;}
+.column-2-3 {width:632px;}
+.column-1-4 {width:222px;}
+.column-3-4 {width:714px;}
+.column-1-2 img,
+.column-1-2 iframe {max-width:468px;}
+.column-1-3 img,
+.column-1-3 iframe {max-width:304px;}
+.column-2-3 img,
+.column-2-3 iframe {max-width:632px;}
+.column-1-4 img,
+.column-1-4 iframe {max-width:222px;}
+.column-3-4 img,
+.column-3-4 iframe {max-width:714px;}
+
+
+/* -------------------------------------------------------------- */
+/* --- REPSONSE 768px -------------------------------------------- */
+/* -------------------------------------------------------------- */
+@media screen and (max-width:980px) {
+	
+	.column {margin-right:20px;}
+	.column-1-2 {width:364px;}
+	.column-1-2 img, 
+	.column-1-2 iframe {max-width:364px;}
+	.column-1-3 {width:236px;}
+	.column-1-3 img, 
+	.column-1-3 iframe {max-width:236px;}
+	.column-2-3 {width:492px;}
+	.column-2-3 img, 
+	.column-2-3 iframe {max-width:492px;}
+	.column-1-4 {width:172px;}
+	.column-1-4 img, 
+	.column-1-4 iframe {max-width:172px;}
+	.column-3-4 {width:556px;}
+	.column-3-4 img, 
+	.column-3-4 iframe {max-width:556px;}
+	
+	
+
+
+}
+/* -------------------------------------------------------------- */
+/* --- REPSONSE 440px ------------------------------------------- */
+/* -------------------------------------------------------------- */
+@media screen and (max-width:768px) {
+
+	.column, .column36, .column48, .column60
+	 {margin-right:0px !important; width:420px !important;}
+	.column img, .column36 img, .column48 img, .column60 img,
+	.column iframe, .column36 iframe, .column48 iframe, .column60 iframe
+	 {max-width:100% !important}
+	 .column .nivoSlider img, .column36 .nivoSlider img, .column48 .nivoSlider img, .column60 .nivoSlider img
+	 {max-width:none !important;}
+
+
+}
+/* -------------------------------------------------------------- */
+/* --- REPSONSE 300px ------------------------------------------- */
+/* -------------------------------------------------------------- */
+
+@media screen and (max-width:440px) {
+	.column, .column36, .column48, .column60
+	 {width:280px !important;}
+
+
+}
