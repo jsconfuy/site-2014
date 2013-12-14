@@ -1,11 +1,11 @@
-exports.index = function(req, res){
-  res.render('index');
-};
+exports.init = function (app) {
 
-exports.speakers = function(req, res) {
-  res.render('speakers');
-};
+  app.get('/', function (req, res) {
+    res.render('index', {});
+  });
 
-exports.venue = function(req, res) {
-  res.render('venue');
+  app.get('/proposals', function (req, res) {
+    res.render('proposals', {});
+  });
+
 };

@@ -1,10 +1,2 @@
-*.swp
-*.swo
-dist
 node_modules
-*.DS_Store
-.log
-npm-debug.log
-config/secrets.json
-public/js/core/models.js
-.idea
+public/vendor/

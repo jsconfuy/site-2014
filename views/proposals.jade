@@ -1,0 +1,55 @@
+extends page
+
+block page 
+  h2 Submit your proposal
+  .border-bottom-gray.margin-top24.margin-bottom24.border-box
+  #proposals.container
+    .row
+      .col-md-6
+        h3.block.margin-bottom36.font-weight300 Submit a Proposal
+        .contact_form_wrapper.margin-bottom48.margin-right24
+          form(action='contact.php', method='post')
+            .field_wrapper.fullwidth.margin-bottom12.relative
+              .title.border-box
+                .vert_align_wrap_system.red-background.block
+                  div
+                    div Topic
+              input.input_field.border-box.block.background-color-passive(type='text', name='topic', placeholder='Topic of your talk')
+              .clearfix
+            .field_wrapper.fullwidth.margin-bottom12.relative
+              .title.border-box
+                .vert_align_wrap_system.red-background.block
+                  div
+                    div Name
+              input.input_field.border-box.block.background-color-passive(type='text', name='name', placeholder='Your name')
+              .clearfix
+            .field_wrapper.fullwidth.margin-bottom12.relative
+              .title.border-box
+                .vert_align_wrap_system.red-background.block
+                  div
+                    div E-mail
+              input.input_field.border-box.block.background-color-passive(type='text', name='e-mail', placeholder='Your e-mail')
+              .clearfix
+            .field_wrapper.fullwidth.margin-bottom12.relative
+              .title.border-box
+                .vert_align_wrap_system.red-background.block
+                  div
+                    div Residence
+              input.input_field.border-box.block.background-color-passive(type='text', name='residence', placeholder='In case you get selected we need to buy you tickets')
+              .clearfix
+            .field_wrapper.fullwidth.margin-bottom12.relative
+              .title.text-center.border-box
+                .border-box.red-background.padding-top12 Summary
+              textarea.textarea_field.border-box.block.background-color-passive(name='summary', placeholder='Please add a summary of your talk here. If you have online material please add it here too.')
+              .clearfix
+            div(style='text-align: right; margin-bottom: 20px;')
+              | Can your company pay for your travel and/or stay
+              input(type='checkbox', value='yes', name='companyPays')
+            input.submit_button.red-background.pull-right(type='submit', value='Submit Proposal', name='submit')
+            .clearfix
+      .col-md-6.text-left
+        h3.block.margin-bottom24.font-weight300 Proposal Submission
+        p.block.margin-bottom24
+          | Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+        p.block.margin-bottom24
+          | At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.

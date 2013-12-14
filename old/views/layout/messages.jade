@@ -1,0 +1,12 @@
+- if(messages.info || messages.error || messages.success)
+  .row
+    .col-lg-12
+      - if (messages.info)
+        .alert.alert-info
+          = messages.info
+      - if (messages.error)
+        .alert.alert-danger
+          = messages.error
+      - if (messages.success)
+        .alert.alert-success
+          = messages.success

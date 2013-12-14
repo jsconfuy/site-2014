@@ -1,4 +1,51 @@
-extends layout/layout
+extends layout
+
+block header
 
 block content
-  p Welcome to Uruguaian JS Conf 
+  #index.col-md-12.relative
+    .chr_slider.relative(data-width='100%')
+      img(src='/img/slider/montevideo.jpg', alt='JSConfUY | Montevideo - March 14th-15th, 2014')
+      img(src='/img/slider/crockford.jpg', alt=' | Starring Douglas Crockford')
+      img(src='/img/slider/antel.jpg', alt=' | Torre de las Telecomunicaciones de Antel')
+    .fotorama-nav-wrap-custom
+      .fotorama-thumbs-inner
+        .nav-thumb-wrap.text-left.pull-left.active-thumb
+          a.top-element.border-box.relative(href='#')
+            span.t-image-top-left.pull-left.icon-calendar.icon-2x.text-center
+            span.slide-description.border-box March 14th-15th, 2014
+            span.clearfix.padding0
+        .nav-thumb-wrap.text-left.pull-left
+          a.top-element.border-box.relative(href='#')
+            span.t-image-top-left.pull-left.icon-bullhorn.icon-2x.text-center
+            span.slide-description.border-box Douglas Crockford
+            span.clearfix.padding0
+        .nav-thumb-wrap.text-left.pull-left
+          a.top-element.border-box.relative(href='#')
+            span.t-image-top-left.pull-left.icon-map-marker.icon-2x.text-center
+            span.slide-description.border-box Antel Auditorium
+            span.clearfix.padding0
+        .clearfix
+  include parts/header
+  include parts/speakers
+  //include parts/sponsors
+  #slider
+    .parallax_banner_wrapper.margin-top24
+      img(src='/img/mvdjs.jpg', alt='The Montevideo Javascript Meetup Group')
+      .banner_text_wrapper
+        .banner_text
+          .banner_text_inner
+            | Share the love for js
+  .red-paralax-background.red-background.text-left.clearfix
+    span.inline-block.letters-white.parallax-undercaption
+    a.pull-right.paralax-buy-button(href='https://tito.io/jsconfuy/2014') Buy a ticket!
+  .clearfix
+  #venue.padding-top72.col-md-12
+    h2
+      | The venue 
+      a(href='#') Antel Auditorium
+    .border-bottom-gray.margin-top24.margin-bottom24.border-box
+    .google-map-wrapper.relative.padding-top72
+      iframe(src='https://www.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=torre+de+antel&sll=-34.892056,-56.194639&sspn=0.021296,0.038581&ie=UTF8&hq=&hnear=Telecommunications+Tower&t=m&z=14&ll=-34.891944,-56.194722&output=embed')
+      .contact-info.letters-white.red-background Guatemala 1075
+
