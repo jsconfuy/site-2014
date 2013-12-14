@@ -14,25 +14,29 @@
         headerGutter;
 
     var calculateParallaxPositions = function () {
-        parallaxBannerOffset = $('.parallax_banner_wrapper').offset().top;
-        parallaxImageHeight = $('.parallax_banner_wrapper img').height();
-        parallaxBannerZeroPos = parallaxBannerOffset - windowHeight / 2 + $('.parallax_banner_wrapper').height() / 2;
+        var banner = $('.parallax_banner_wrapper');
+        if(!banner.length) return;
+        
+        parallaxBannerOffset = banner.offset().top;
+        var images = banner.find('img');
+        parallaxImageHeight = images.height();
+        parallaxBannerZeroPos = parallaxBannerOffset - windowHeight / 2 + banner.height() / 2;
         imgPosLeft = -((1920 - parWindWidth) / 2);
         
-        parallaxBannerRatio = windowHeight / $('.parallax_banner_wrapper').height();
+        parallaxBannerRatio = windowHeight / banner.height();
         textPosTop = (documentScroll - parallaxBannerZeroPos) / parallaxBannerRatio;
         imgPosTop = ((parallaxBannerZeroPos - documentScroll) / parallaxBannerRatio - parallaxImageHeight / 4) * 0.9;
         
-        $('.parallax_banner_wrapper img').css({
+        images.css({
             'top': imgPosTop,
             'left': imgPosLeft
         });
 
-        $('.parallax_banner_wrapper .banner_text_wrapper').css({
+        banner.find('.banner_text_wrapper').css({
             'top': textPosTop
         });
 
-        $('.parallax_banner_wrapper .banner_text_inner').css({
+        banner.find('.banner_text_inner').css({
             'font-size': (parWindWidth / 18) + 'px',
             'line-height': (parWindWidth / 18) + 4 + 'px'
         });
@@ -45,14 +49,14 @@
             $('.navigation-tab').removeClass('sticky');
         }
 
-        $('.navigation-panel a[href*=#]').each(function () {
-            var $offsetElement = $($(this).attr('href')),
-                offsetTop = $offsetElement.offset().top - headerGutter;
-            if ((offsetTop >= documentScroll && offsetTop <= documentScroll + 1 / 2 * windowHeight) || (offsetTop + $offsetElement.height() >= $(window).width() + 1 / 2 * windowHeight && offsetTop + $offsetElement.height() <= $(window).width() + windowHeight)) {
-                $('.navigation-panel li.active').removeClass('active');
-                $(this).parent().addClass('active');
-            }
-        });
+        //$('.navigation-panel a[href*=#]').each(function () {
+        //    var $offsetElement = $($(this).attr('href')),
+        //        offsetTop = $offsetElement.offset().top - headerGutter;
+        //    if ((offsetTop >= documentScroll && offsetTop <= documentScroll + 1 / 2 * windowHeight) || (offsetTop + $offsetElement.height() >= $(window).width() + 1 / 2 * windowHeight && offsetTop + $offsetElement.height() <= $(window).width() + windowHeight)) {
+        //        $('.navigation-panel li.active').removeClass('active');
+        //        $(this).parent().addClass('active');
+        //    }
+        //});
     };
 
     $(document).on('ready', function () {

@@ -610,11 +610,7 @@ form .close_button {font-size:26px; line-height:26px; padding: 0px 10px 6px 10px
 
 
 
-
-
-
-
-.text_color_default, .text_color_default:hover, .text_color_default:focus {color:#4c4c4c;}
+.text_color_default, .text_color_default:hover, .text_color_default:focus color:#4c4c4c;}
 .background-color-main-before:before {background:  #e8652d !important;}
 .background-color-main {background: #e8652d !important; transition: background-color 300ms;}
 .hover-background-color-lighter-main:hover {background: #ec8051 !important; transition: background-color 300ms;}

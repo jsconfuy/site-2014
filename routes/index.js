@@ -8,4 +8,9 @@ exports.init = function (app) {
     res.render('proposals', {});
   });
 
+  app.post('/proposals', function (req, res) {
+    var Proposal = require('models/proposal');
+    proposal = new Proposal();
+    res.send(proposal);
+  });
 };
