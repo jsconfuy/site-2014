@@ -318,6 +318,7 @@ footer input[type=submit]:focus {
   .fotorama__caption__wrap span {
     font-size: 74px;
     line-height: 80px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
   }
 }
 
@@ -470,6 +471,14 @@ ul.thumbs li span {
 
 .speakers .image span {
   border: 1px dashed #1D1E1E;
+}
+
+.sponsors h3 {
+  margin-bottom: 40px;
+}
+
+.sponsors p {
+ text-align: center;
 }
 
 .venue iframe {
