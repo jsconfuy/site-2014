@@ -19,5 +19,19 @@
     "grunt-nodemon": "0.1.2",
     "grunt-concurrent": "0.4.1",
     "grunt-contrib-less": "0.7.0"
+    "express": "3.3.7",
+    "jade": "*",
+    "less-middleware": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "connect-ensure-login": "*",
+    "express-flash": "*",
+    "mongoose": "latest",
+    "bcrypt": "*"
+  },
+  "optionalDependencies": {
+    "strong-cluster-control": "~0.1.0",
+    "strong-agent": "~0.2.15",
+    "loopback-explorer": "~1.0.0"
   }
 }

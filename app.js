@@ -4,6 +4,40 @@ var express = require('express'),
     assert = require('assert'),
     path = require('path');
 
+/**
+ * Module dependencies.
+ */
+try {
+    require('strong-agent').profile();   
+}catch(e){
+}
+var http = require('http');
+var express = require('express');
+//var flash = require('express-flash');
+var path = require('path');
+//var passport = require('passport');
+
+//var routes = require('./routes');
+//var auth = require('./routes/auth');
+//var admin = require('./routes/admin');
+//var proposals = require('./routes/proposals');
+//var users = require('./routes/users');
+//var speakers = require('./routes/speakers');
+//var config = require('./config');
+
+//var loginUtils = require('connect-ensure-login');
+//var authUtils = require('./utils/auth');
+
+//var mongoose = require('mongoose');
+//var User = require('./models/user');
+
+//Connect to the database
+//mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/jsconfuy');
+
+//Configure passport
+//config.passport(passport);
+
+//Create the express app
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
