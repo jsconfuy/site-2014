@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'chunkfiveroman';
+    src: url('../font/chunkfive-webfont.eot');
+    src: url('../font/chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/chunkfive-webfont.woff') format('woff'),
+    url('../font/chunkfive-webfont.ttf') format('truetype'),
+    url('../font/chunkfive-webfont.svg#chunkfiveroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'chunkfiveroman';
+        src: url('../font/chunkfive-webfont.svg') format('svg');
+    }
+}
+
+@font-face {
+    font-family: 'dosisextralight';
+    src: url('../font/dosis-extralight-webfont.eot');
+    src: url('../font/dosis-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/dosis-extralight-webfont.woff') format('woff'),
+    url('../font/dosis-extralight-webfont.ttf') format('truetype'),
+    url('../font/dosis-extralight-webfont.svg#dosisextralight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dosislight';
+    src: url('../font/dosis-light-webfont.eot');
+    src: url('../font/dosis-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/dosis-light-webfont.woff') format('woff'),
+    url('../font/dosis-light-webfont.ttf') format('truetype'),
+    url('../font/dosis-light-webfont.svg#dosislight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'dosisextralight';
+        src: url('../font/dosis-extralight-webfont.svg') format('svg');
+    }
+}

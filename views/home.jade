@@ -1,4 +1,52 @@
 extends base
 
+block top
+  .slider
+    .slides
+      img(src='/img/slider/montevideo.jpg', data-caption='JSConfUY<span>Montevideo - March 14th and 15th, 2014</span>')
+      img(src='/img/slider/crockford.jpg', data-caption='<span>Starring Douglas Crockford</span>')
+      img(src='/img/slider/antel.jpg', data-caption='<span>Torre de las Comunicaciones</span>')
+    ul.thumbs
+      li
+        i.fa.fa-calendar
+        span March 14th-15th, Montevideo
+      li
+        i.fa.fa-bullhorn
+        span Douglas Crockford
+      li
+        i.fa.fa-map-marker
+        span Antel Auditorium
+
 block content
-  HOLA
+  .speakers
+    h2#speakers Speakers
+    h3 Meet the speakers
+    ul
+      li
+        .description
+          | Douglas Crockford is an American computer programmer and entreipreneur who is best known for his ongoing involvement in the development of the JavaScript language, for having popularized the data format JSON (JavaScript Object Notation).
+        .image
+          img(src='/img/speakers/douglas-crockford.jpg', alt='Douglas Crockford')
+        .name
+          a(href='http://www.crockford.com/') Douglas Crockford
+          a(href='http://www.paypal.com') Paypal
+      li
+        .name
+          a(href='http://www.devthought.com/') Guillermo Rauch
+          a(href='https://cloudup.com/') Cluodup
+        .image
+          img(src='/img/speakers/guillermo-rauch.jpg', alt='Guillermo Rauch')
+        .description
+          | Guillermo is the creator of
+          a(href='http://socket.io/') socket.io
+          | .
+      li
+        .description Submit your proposal.
+        .image
+          span
+        .name
+            a(href='/proposals') You
+  .venue
+    h2#venue The venue
+    h3 Antel Auditorium
+    iframe(src='https://www.google.com/maps/ms?msa=0&msid=202962288982339632307.0004ed9e9e6f542a556aa&hl=en&ie=UTF8&ll=-34.891803,-56.194242&spn=0,0&t=m&output=embed')
