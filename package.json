@@ -7,14 +7,14 @@
   },
   "dependencies": {
     "express": "3.4.0",
-    "jade": "0.35.0"
+    "jade": "0.35.0",
     "less-middleware": "*",
     "passport": "*",
     "connect-ensure-login": "*",
     "passport-local": "*",
     "express-flash": "*",
     "mongoose": "latest",
-    "bcrypt": "*"
+    "bcrypt": "*",
   },
   "devDependencies": {
     "grunt": "0.4.1",
