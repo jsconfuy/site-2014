@@ -9,8 +9,7 @@ var proposalSchema = new Schema({
   twitterUrl: String,
   githubUrl: String,
   blogUrl: String,
-  city: {type: String, required: true},
-  country: String,
+  residence: {type: String, required: true},
   companyPays: Boolean,
   active: {type: Boolean, default: true}
 });

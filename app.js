@@ -1,44 +1,12 @@
-var express = require('express'),
-    http = require('http'),
-    fs = require('fs'),
-    assert = require('assert'),
-    path = require('path');
-
-/**
- * Module dependencies.
- */
-try {
-    require('strong-agent').profile();   
-}catch(e){
-}
 var http = require('http');
+var fs = require('fs');
 var express = require('express');
-//var flash = require('express-flash');
+var expressValidator = require('express-validator');
 var path = require('path');
-//var passport = require('passport');
+var assert = require('assert');
 
-//var routes = require('./routes');
-//var auth = require('./routes/auth');
-//var admin = require('./routes/admin');
-//var proposals = require('./routes/proposals');
-//var users = require('./routes/users');
-//var speakers = require('./routes/speakers');
-//var config = require('./config');
-
-//var loginUtils = require('connect-ensure-login');
-//var authUtils = require('./utils/auth');
-
-//var mongoose = require('mongoose');
-//var User = require('./models/user');
-
-//Connect to the database
-//mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/jsconfuy');
-
-//Configure passport
-//config.passport(passport);
-
-//Create the express app
 var app = express();
+var appValidator = expressValidator();
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
@@ -46,6 +14,7 @@ app.set('view engine', 'jade');
 app.use(express.favicon("public/img/favicon.ico"));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+app.use(appValidator);
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -65,7 +34,7 @@ fs.readdir(routesDir, function (err, files) {
   });
 });
 
-http.createServer(app).listen(app.get('port'), function(){
-  var urlOfApp = 'http://localhost:' + app.get('port');
-  console.log('server running : ' + urlOfApp);
+var server = http.createServer(app).listen(app.get('port'), function() {
+  var address = server.address();
+  console.log("opened server on %j %s", address.address, address.port);
 });

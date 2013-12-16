@@ -488,3 +488,80 @@ ul.thumbs li span {
   width: 100%;
   height: 550px;
 }
+
+.proposals h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.proposals form  {
+  display: block;
+  text-align: left;
+}
+
+.proposals form .field label {
+  margin: 20px 0 4px 0;
+  display: block;
+}
+
+.proposals form .field .note {
+  margin: 0 0 6px 0;
+  display: block;
+  line-height: 15px;
+  font-size: 15px;
+}
+
+.proposals form .field input[type=text],
+.proposals form .field input[type=email],
+.proposals form .field textarea {
+  height: 40px;
+  width: 100%;
+  margin: 0;
+  font-family: 'dosisextralight';
+  font-size: 16px;
+  line-height: 16px;
+  color: #000;
+  background: #ceced0;
+  padding: 12px;
+  border: 0;
+  transition: background-color 300ms;
+}
+
+.proposals form .field textarea {
+  height: 100px;
+  max-width: 100%;
+}
+
+.proposals form .field input[type=text]:focus,
+.proposals form .field input[type=email]:focus,
+.proposals form .field textarea:focus {
+  color: #000;
+
+}
+
+.proposals form .action {
+  margin: 20px 0 40px 0;
+  text-align: center;
+}
+
+.proposals form .action input {
+  outline: none;
+  height: 45px;
+  width: 30%;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 16px;
+  color: #fff;
+  background: #3498db;
+  transition: 0.3s;
+  border: none;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.proposals form .action input:hover,
+.proposals form .action input:focus {
+  background: #5dade2;
+}
