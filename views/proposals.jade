@@ -8,7 +8,7 @@ block page
       .col-md-6
         h3.block.margin-bottom36.font-weight300 Submit a Proposal
         .contact_form_wrapper.margin-bottom48.margin-right24
-          form(action='#', method='post' id='new-proposal')
+          form(action='/proposals', method='post' id='new-proposal')
             .field_wrapper.fullwidth.margin-bottom12.relative
               .title.border-box
                 .vert_align_wrap_system.red-background.block
@@ -33,7 +33,7 @@ block page
                 .vert_align_wrap_system.red-background.block
                   div
                     div E-mail
-              input.input_field.border-box.block.background-color-passive(type='text', name='e-mail', placeholder='Your e-mail')
+              input.input_field.border-box.block.background-color-passive(type='text', name='email', placeholder='Your e-mail')
               .clearfix
             .field_wrapper.fullwidth.margin-bottom12.relative
               .title.border-box

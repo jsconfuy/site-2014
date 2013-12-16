@@ -1,12 +1,9 @@
-try {
-    require('strong-agent').profile();   
-}catch(e){
-}
 var express = require('express'),
     http = require('http'),
     fs = require('fs'),
     assert = require('assert'),
-    path = require('path');
+    path = require('path'),
+    expressValidator = require('express-validator');
 
 var app = express();
 
@@ -16,6 +13,7 @@ app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+app.use(expressValidator);
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -35,7 +33,7 @@ fs.readdir(routesDir, function (err, files) {
   });
 });
 
-http.createServer(app).listen(app.get('port'), function(){
-  var urlOfApp = 'http://localhost:' + app.get('port');
-  console.log('server running : ' + urlOfApp);
+var server = http.createServer(app).listen(app.get('port'), function() {
+  var addr = server.address();
+  console.log("opened server on %j %s", addr.address, addr.port);
 });
