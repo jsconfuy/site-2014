@@ -67,23 +67,34 @@ block content
     .container
       .row
         .col-md-6.col-md-offset-3
-          form(action='/proposals#submit', method='post' id='proposal')
+          - var all = errors || {}
+          form(action='/proposals#submit', method='post')
             .field
-              label(for='topic') Talk's Topic
+              label(for='topic') Talk's Topic *
               input#topic(type='text', name='topic')
+              if all.topic
+                .error #{all.topic.msg}
             .field
-              label(for='summary') Talk's Summary
+              label(for='summary') Talk's Summary *
               textarea#summary(name='summary')
+              if all.summary
+                .error #{all.summary.msg}
             .field
-              label(for='name') Speaker's Name
+              label(for='name') Speaker's Name *
               input#name(type='text', name='name')
+              if all.name
+                .error #{all.name.msg}
             .field
-              label(for='email') Speaker's E-mail
+              label(for='email') Speaker's E-mail *
               input#email(type='email', name='email')
+              if all.email
+                .error #{all.email.msg}
             .field
-              label(for='residence') Speaker's Residence 
-              .note In case the speaker get selected we need to buy their tickets.
+              label(for='residence') Speaker's Residence *
+              .note In case the speaker gets selected we'll need to buy their tickets.
               input#residence(type='text', name='residence')
+              if all.residence
+                .error #{all.residence.msg}
             .field
               label(for='notes') Notes
               .note Anything else you would like to mention

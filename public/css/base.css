@@ -511,6 +511,14 @@ ul.thumbs li span {
   font-size: 15px;
 }
 
+.proposals form .field .error {
+  margin: 4px 0 6px 0;
+  display: block;
+  color: #DF6A63;
+  line-height: 16px;
+  font-size: 16px;
+}
+
 .proposals form .field input[type=text],
 .proposals form .field input[type=email],
 .proposals form .field textarea {
@@ -564,4 +572,13 @@ ul.thumbs li span {
 .proposals form .action input:hover,
 .proposals form .action input:focus {
   background: #5dade2;
+}
+
+.thanks {
+  text-align: center;
+  margin: 0 0 80px 0;
+}
+
+.thanks p {
+  margin: 20px 0 0 0;
 }

@@ -6,11 +6,9 @@ var proposalSchema = new Schema({
   summary: {type: String, required: true},
   name: {type: String, required: true},
   email: {type: String, required: true},
-  twitterUrl: String,
-  githubUrl: String,
-  blogUrl: String,
   residence: {type: String, required: true},
   companyPays: Boolean,
+  notes: {type: String, required: true},
   active: {type: Boolean, default: true}
 });
 
