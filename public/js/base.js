@@ -30,3 +30,4 @@
     $(document).on('scroll', sticky);
   });
 })();
+

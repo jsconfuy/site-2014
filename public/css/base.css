@@ -20,7 +20,7 @@ h1 {
 
 h2 {
   margin: 0;
-  padding: 0;
+  padding: 120px 0 0 0;
   font-family: 'chunkfiveroman';
   font-size: 48px;
   line-height: 48px;
@@ -112,7 +112,7 @@ textarea:focus {
 /* Header*/
 
 header {
-  height: 82px;
+  height: 0;
   margin-bottom: 50px;
 }
 
@@ -411,7 +411,7 @@ ul.thumbs li span {
   list-style: none;
 }
 
-.speakers li::after {
+.speakers li.divider {
   display: block;
   content: "";
   height: 60px;
@@ -420,13 +420,9 @@ ul.thumbs li span {
   border-left: 1px dashed #1D1E1E;
 }
 
-.speakers li:last-child::after {
-  content: none;
-}
-
 @media (min-width: 992px) {
   .speakers li {
-    display: block;
+    display: table;
     width: 100%;
   }
 
