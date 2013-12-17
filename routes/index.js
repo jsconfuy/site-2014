@@ -9,6 +9,9 @@ exports.init = function (app) {
   });
 
   app.post('/proposals', function (req, res) {
+    var mongoose = require('mongoose');
+    mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/jsconfuy');
+
     var Proposal = require('../models/proposal');
 
     req.assert('topic', 'Topic is required.').notEmpty();
