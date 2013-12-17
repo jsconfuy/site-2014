@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/jsconfuy');
+
 var Schema = mongoose.Schema;
 
 var proposalSchema = new Schema({
@@ -6,10 +8,8 @@ var proposalSchema = new Schema({
   summary: {type: String, required: true},
   name: {type: String, required: true},
   email: {type: String, required: true},
-  twitterUrl: String,
-  githubUrl: String,
-  blogUrl: String,
   residence: {type: String, required: true},
+  notes: {type: String, required: false},
   companyPays: Boolean,
   active: {type: Boolean, default: true}
 });

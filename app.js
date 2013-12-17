@@ -1,19 +1,20 @@
-var express = require('express'),
-    http = require('http'),
-    fs = require('fs'),
-    assert = require('assert'),
-    path = require('path'),
-    expressValidator = require('express-validator');
+var http = require('http');
+var fs = require('fs');
+var express = require('express');
+var expressValidator = require('express-validator');
+var path = require('path');
+var assert = require('assert');
 
 var app = express();
+var appValidator = expressValidator();
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
+app.use(express.favicon("public/img/favicon.ico"));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
-app.use(expressValidator);
+app.use(appValidator);
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,6 +35,6 @@ fs.readdir(routesDir, function (err, files) {
 });
 
 var server = http.createServer(app).listen(app.get('port'), function() {
-  var addr = server.address();
-  console.log("opened server on %j %s", addr.address, addr.port);
+  var address = server.address();
+  console.log("opened server on %j %s", address.address, address.port);
 });

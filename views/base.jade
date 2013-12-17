@@ -1,0 +1,93 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title JSConf - Montevideo, Uruguay
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    
+    link(rel='stylesheet', type='text/css', href='/vendor/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/fotorama/fotorama.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/font-awesome/css/font-awesome.css')
+    link(rel='stylesheet', type='text/css', href='/css/font.css')
+    link(rel='stylesheet', type='text/css', href='/css/base.css')
+
+  body
+    block top
+    block header
+      header
+        nav.navbar(role='navigation')
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#menu')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/')
+              img(src='/img/logo.png', alt='JSConf Uruguay')
+          #menu.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='/') Home
+              li
+                a(href='/#speakers') Speakers
+              li
+                a(href='/#sponsors') Sponsors
+              li
+                a(href='/#venue') Venue
+              li
+                a(href='http://tickets.jsconf.uy/') Buy Tickets!
+              li
+                a(href='/proposals') Call for Proposals
+    block content
+    block footer
+      footer
+        .container
+          .row
+            .col-md-4
+              h3 Additional Information
+              p
+                | Please feel free to contact us at 
+                a(href='mailto:hola@jsconf.uy') hola@jsconf.uy
+                |  we are glad to help with the trips, the location and with general rules about getting to the country.
+            .col-md-4
+              h3 Who we are?
+              p
+              | Pablo Ricco, Gabriel Chertok, Pablo Dejuan, Martin Prunell, Sebastian Sassi, Luis Alberto Cal, Rodrigo Espinosa
+            .col-md-4
+              h3 Stay In Touch
+              form(action='http://jsconf.us7.list-manage.com/subscribe/post?u=522df5bbc3b97d9e5f5c16fe0&amp;id=7f258c3ebb', method='post')
+                input(type='email', name='EMAIL', placeholder='E-mail address')
+                input(type='submit', value='Subscribe')
+          .row.last
+            .col-md-6
+              a(href='http://www.meetup.com/mvd-js/') The Montevideo Javascript Meetup Group
+            .col-md-6
+              ul
+                li
+                  a(href='https://plus.google.com/JsConfUy+')
+                    i.fa.fa-google-plus
+                li
+                  a(href='https://twitter.com/JsConfUy')
+                    i.fa.fa-twitter
+                li
+                  a(href='https://www.facebook.com/JsConfUy')
+                    i.fa.fa-facebook
+                li
+                  a(href='https://github.com/JSConfUY/site')
+                    i.fa.fa-github-alt
+    script(type='text/javascript')
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40076270-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    script(src='/vendor/jquery/jquery.min.js')
+    script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/vendor/fotorama/fotorama.js')
+    script(src='/js/base.js')
+    block script
