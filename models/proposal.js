@@ -9,8 +9,8 @@ var proposalSchema = new Schema({
   name: {type: String, required: true},
   email: {type: String, required: true},
   residence: {type: String, required: true},
+  notes: {type: String, required: false},
   companyPays: Boolean,
-  notes: {type: String, required: true},
   active: {type: Boolean, default: true}
 });
 
