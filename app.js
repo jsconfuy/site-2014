@@ -4,6 +4,9 @@ var express = require('express');
 var expressValidator = require('express-validator');
 var path = require('path');
 var assert = require('assert');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/jsconfuy');
 
 var app = express();
 var appValidator = expressValidator();
