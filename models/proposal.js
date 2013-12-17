@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/jsconfuy');
+
 var Schema = mongoose.Schema;
 
 var proposalSchema = new Schema({
