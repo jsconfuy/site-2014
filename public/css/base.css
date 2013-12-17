@@ -94,24 +94,6 @@ a:hover {
   text-decoration: none;
 }
 
-.speakers .buy {
-  padding: 15px 0;
-  text-align: center;
-  width: 150px;
-  display: block;
-  margin: 40px auto 0;
-  font-size: 16px;
-  line-height: 16px;
-  color: #fff;
-  background: #3498db;
-  transition: 0.3s;
-  border: none;
-  -ms-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 input[type=text],
 input[type=email],
 textarea {
@@ -437,6 +419,29 @@ ul.thumbs li span {
   margin: 10px auto;
   width: 0;
   border-left: 1px dashed #1D1E1E;
+}
+
+.speakers .buy {
+  padding: 22px 0 16px;
+  text-align: center;
+  width: 220px;
+  display: block;
+  font-family: 'chunkfiveroman';
+  margin: 40px auto 0;
+  font-size: 26px;
+  line-height: 16px;
+  color: #fff;
+  background: #3498db;
+  transition: 0.3s;
+  border: none;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.speakers .buy:hover {
+  background: #5dade2;
 }
 
 @media (min-width: 992px) {
