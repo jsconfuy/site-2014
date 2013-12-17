@@ -554,8 +554,7 @@ ul.thumbs li span {
 
 .proposals form .action input {
   outline: none;
-  height: 45px;
-  width: 30%;
+  padding: 15px;
   display: inline-block;
   font-size: 16px;
   line-height: 16px;
