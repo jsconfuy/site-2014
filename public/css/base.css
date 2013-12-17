@@ -94,6 +94,24 @@ a:hover {
   text-decoration: none;
 }
 
+.speakers .buy {
+  padding: 15px 0;
+  text-align: center;
+  width: 150px;
+  display: block;
+  margin: 40px auto 0;
+  font-size: 16px;
+  line-height: 16px;
+  color: #fff;
+  background: #3498db;
+  transition: 0.3s;
+  border: none;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 input[type=text],
 input[type=email],
 textarea {
