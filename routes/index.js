@@ -7,6 +7,10 @@ exports.init = function (app) {
   app.get('/proposals', function (req, res) {
     res.render('proposals', {});
   });
+  
+  app.get('/faq', function (req, res) {
+    res.render('faq', {});
+  });
 
   app.post('/proposals', function (req, res) {
     var Proposal = require('../models/proposal');
