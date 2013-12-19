@@ -130,6 +130,10 @@ ul li {
   }
 }
 
+a {
+  /*text-decoration: none;*/
+}
+
 ul li:nth-of-type(1) {
   font-size: 50px;
   color: fuchsia;
@@ -139,6 +143,10 @@ ul li:nth-of-type(1) {
   -moz-animation-delay: 0s;
   -o-animation-delay: 0s;
   animation-delay: 0s;
+}
+
+ul li:nth-of-type(1) a {
+  color: fuchsia;
 }
 
 ul li:nth-of-type(2) {
@@ -152,6 +160,10 @@ ul li:nth-of-type(2) {
   animation-delay: 0.5s;
 }
 
+ul li:nth-of-type(2) a {
+  color: lime;
+}
+
 
 ul li:nth-of-type(3) {
   font-size: 70px;
@@ -162,6 +174,10 @@ ul li:nth-of-type(3) {
   -moz-animation-delay: 1s;
   -o-animation-delay: 1s;
   animation-delay: 1s;
+}
+
+ul li:nth-of-type(3) a {
+  color: yellow;
 }
 
 ul li:nth-of-type(4) {
@@ -184,4 +200,34 @@ ul li:nth-of-type(5) {
   -moz-animation-delay: 1.2s;
   -o-animation-delay: 1.2s;
   animation-delay: 1.2s;
+}
+
+ul li:nth-of-type(6) {
+  font-size: 50px;
+  color: brown;
+  top: 30%;
+  left: 45%;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+ul li:nth-of-type(6) a {
+  color: brown;
+}
+
+ul li:nth-of-type(7) {
+  font-size: 50px;
+  color: orange;
+  top: 45%;
+  right: 10%;
+  -webkit-animation-delay: 1.7s;
+  -moz-animation-delay: 1.7s;
+  -o-animation-delay: 1.7s;
+  animation-delay: 1.7s;
+}
+
+ul li:nth-of-type(7) a {
+  color: orange;
 }
