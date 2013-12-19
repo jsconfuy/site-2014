@@ -8,6 +8,10 @@ exports.init = function (app) {
     res.render('proposals', {});
   });
 
+  app.get('/wow', function (req, res) {
+    res.render('doge', {});
+  });
+
   app.post('/proposals', function (req, res) {
     var Proposal = require('../models/proposal');
 

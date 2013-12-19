@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'Comic Sans';
+    src: url('../font/comic.eot');
+    src: url('../font/comic.eot?#iefix') format('embedded-opentype'),
+         url('../font/comic.woff') format('woff'),
+         url('../font/comic.ttf') format('truetype'),
+         url('../font/comic.svg#comic_sans_ms') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comic Sans';
+    src: url('../font/comicbd.eot');
+    src: url('../font/comicbd.eot?#iefix') format('embedded-opentype'),
+         url('../font/comicbd.woff') format('woff'),
+         url('../font/comicbd.ttf') format('truetype'),
+         url('../font/comicbd.svg#comic_sans_msbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html, body {
+  font-family: 'Comic Sans', 'Comic Sans MS';
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  background: transparent url(../img/doge.jpg) 50% 0 no-repeat;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-size: cover;
+  z-index: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  opacity: 0;
+  -webkit-animation-name: doge;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: doge;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 10s;
+  -moz-animation-direction: alternate;
+  -o-animation-name: doge;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 10s;
+  -o-animation-direction: alternate;
+  animation-name: doge;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes doge {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-moz-keyframes doge {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-o-keyframes doge {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@keyframes doge {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+ul li:nth-of-type(1) {
+  font-size: 50px;
+  color: fuchsia;
+  top: 10%;
+  left: 5%;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+ul li:nth-of-type(2) {
+  font-size: 40px;
+  color: lime;
+  right: 20%;
+  bottom: 20%;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+
+ul li:nth-of-type(3) {
+  font-size: 70px;
+  color: yellow;
+  right: 20%;
+  top: 5%;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+ul li:nth-of-type(4) {
+  font-size: 50px;
+  color: blue;
+  right: 48%;
+  top: 50%;
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
+  -o-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+ul li:nth-of-type(5) {
+  font-size: 80px;
+  color: violet;
+  left: 5%;
+  bottom: 15%;
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
+  -o-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
