@@ -8,8 +8,12 @@ exports.init = function (app) {
     res.render('proposals', {});
   });
   
-  app.get('/faq', function (req, res) {
-    res.render('faq', {});
+  app.get('/getting-to-uruguay', function (req, res) {
+    res.render('getting-to-uruguay', {});
+  });
+  
+  app.get('/hotels', function (req, res) {
+    res.render('hotels', {});
   });
 
   app.post('/proposals', function (req, res) {

@@ -114,6 +114,7 @@ textarea:focus {
 header {
   height: 0;
   margin-bottom: 50px;
+  min-height:32px;
 }
 
 @media (min-width: 768px) {
@@ -603,4 +604,10 @@ ul.thumbs li span {
 
 .thanks p {
   margin: 20px 0 0 0;
+}
+
+.faq .intro{
+  height:400px;
+  overflow: hidden;
+  background: url('../img/slider/montevideo.jpg') 0% 53%;
 }
