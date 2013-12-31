@@ -575,6 +575,10 @@ ul.thumbs li span {
   text-align: center;
 }
 
+.proposals form input[type=checkbox]{
+  margin-right: 5px;
+}
+
 .proposals form .action input {
   outline: none;
   padding: 15px;
