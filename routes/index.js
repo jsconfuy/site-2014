@@ -36,4 +36,8 @@ exports.init = function (app) {
   app.get('/thanks', function (req, res) {
     res.render('thanks', {});
   });
+  
+  app.get('/hotels', function (req, res) {
+    res.render('hotels', {});
+  });
 };

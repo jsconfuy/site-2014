@@ -89,6 +89,10 @@ a {
   text-decoration: none;
 }
 
+b {
+  color: #3498db;
+}
+
 a:hover {
   color: #5dade2;
   text-decoration: none;
@@ -609,3 +613,10 @@ ul.thumbs li span {
   margin: 20px 0 0 0;
 }
 
+.hotels {
+  margin-top: 40px;
+}
+
+.hotels tfoot {
+  text-align: right;
+}
