@@ -4,9 +4,11 @@ exports.init = function (app) {
     res.render('index', {});
   });
 
+  /*
   app.get('/proposals', function (req, res) {
     res.render('proposals', {});
   });
+  */
 
   app.get('/wow', function (req, res) {
     res.render('doge', {});
@@ -36,7 +38,7 @@ exports.init = function (app) {
   app.get('/thanks', function (req, res) {
     res.render('thanks', {});
   });
-  
+
   app.get('/hotels', function (req, res) {
     res.render('hotels', {});
   });
