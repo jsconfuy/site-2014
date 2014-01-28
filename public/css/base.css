@@ -614,7 +614,6 @@ ul.thumbs li span {
 }
 
 .hotels {
-  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -643,4 +642,8 @@ ul.thumbs li span {
 
 .hotels tfoot {
   text-align: right;
+}
+
+.code {
+  margin-bottom: 40px;
 }

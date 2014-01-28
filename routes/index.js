@@ -4,11 +4,11 @@ exports.init = function (app) {
     res.render('index', {});
   });
 
-  /*
+  
   app.get('/proposals', function (req, res) {
-    res.render('proposals', {});
+    res.render('proposals-closed', {});
   });
-  */
+ 
 
   app.get('/wow', function (req, res) {
     res.render('doge', {});
@@ -42,4 +42,9 @@ exports.init = function (app) {
   app.get('/hotels', function (req, res) {
     res.render('hotels', {});
   });
+
+  app.get('/code-of-conduct', function (req, res) {
+    res.render('code-of-conduct', {});
+  });
+
 };
