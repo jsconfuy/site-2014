@@ -1,4 +1,5 @@
 extends base
+include mixins/sponsor
 
 block top
   .slider
@@ -107,6 +108,19 @@ block content
     a.buy(href='http://tickets.jsconf.uy/') Buy tickets!
   .sponsors
     h2#sponsors Sponsors
+    ul.sponsors-g
+      
+    ul.sponsors-s
+      +sponsor('Globant', 'img/sponsors/globant.jpg', 'http://globant.com')
+
+    ul.sponsors-b
+      +sponsor('Sophilabs', 'img/sponsors/sophilabs.jpg', 'http://sophilabs.com')
+
+    ul.sponsors-sp
+      +sponsor('Strongloop', 'img/sponsors/strongloop.jpg', 'http://strongloop.com')
+      +sponsor('Shopify', 'img/sponsors/shopify.png', 'http://shopify.com')
+      +sponsor('Jetbrains', 'img/sponsors/Jetbrains.png', 'http://jetbrains.com')
+
     h3 Interested?
     .container
       .row

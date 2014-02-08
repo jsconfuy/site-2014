@@ -504,6 +504,52 @@ ul.thumbs li span {
   margin-bottom: 40px;
 }
 
+.sponsors ul {
+  list-style: none;
+  margin: 15px auto;
+  padding: 0;
+  text-align: center;
+}
+
+.sponsors ul li {
+  background: #DFDFDF;
+  border-radius: 50%;
+  display: inline-block;
+  height: 240px;
+  margin: 0 12px;
+  overflow: hidden;
+  padding: 5px;
+  width: 240px;
+}
+
+.sponsors .sponsors-g li{height: 240px; width: 240px;}
+.sponsors .sponsors-s li{height: 200px; width: 200px;}
+.sponsors .sponsors-b li{height: 180px; width: 180px;}
+.sponsors .sponsors-sp li{height: 160px; width: 160px;}
+
+.sponsors ul li a {
+  display: block;
+}
+
+.sponsors ul li a img {
+  border-radius: 50%;
+  min-height: 100%;
+  -webkit-transition: all 650ms;
+     -moz-transition: all 650ms;
+      -ms-transition: all 650ms;
+       -o-transition: all 650ms;
+          transition: all 650ms;
+  max-width: 100%;
+}
+
+.sponsors ul li:hover img {
+  -webkit-transform: scale(0.9) rotate(360deg);
+     -moz-transform: scale(0.9) rotate(360deg);
+      -ms-transform: scale(0.9) rotate(360deg);
+       -o-transform: scale(0.9) rotate(360deg);
+          transform: scale(0.9) rotate(360deg);
+}
+
 .sponsors p {
  text-align: center;
 }
