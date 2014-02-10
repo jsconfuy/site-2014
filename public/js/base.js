@@ -25,6 +25,12 @@
       } else {
         $('header').removeClass('sticky');
       }
+
+      if ($(document).scrollTop() > $('.sponsors').offset().top - 300) {
+        $('.sponsors li:not(.active)').each(function (index) {
+          $(this).addClass('active');
+        });
+      }
     };
     $(window).on('resize', sticky);
     $(document).on('scroll', sticky);
