@@ -153,6 +153,10 @@ header {
   color: #444;
 }
 
+.navbar .navbar-nav > li.buy-tickets > a {
+  background: #F6F6F6;
+}
+
 @media (min-width: 768px) {
   .navbar .navbar-nav > li > a {
     padding: 26px 16px;
@@ -703,4 +707,54 @@ ul.thumbs li span {
 
 .code {
   margin-bottom: 40px;
+}
+
+/** ===================================|
+ *           speakers                  |
+ *  ===================================|
+ */
+.speakers_list {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.speakers_list li {
+  display: inline-block;
+  margin: 40px;
+  vertical-align: top;
+  width: 200px;
+}
+
+.speakers_list li h5 {
+  font-weight: 600;
+}
+
+.speakers_list li h5, .speakers_list li h6 {
+  font-size: 23px;
+  color: #333;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+.speakers_list li img {
+  background: #F6F6F6;
+  border-radius: 200px;
+  display: block;
+  height: 200px;
+  margin: auto auto;
+  padding: 10px;
+  width: 200px;
+}
+
+.speakers_list li p {
+  color: #999;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+  word-wrap: break-word;
+  word-spacing: 1px;
+  line-height: 22px;
 }

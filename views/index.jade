@@ -1,5 +1,6 @@
 extends base
 include mixins/sponsor
+include mixins/speaker
 
 block top
   .slider
@@ -22,36 +23,27 @@ block content
   .speakers
     h2#speakers Speakers
     h3 Meet the speakers
-    ul
+    ul.speakers_list
       li
-        .description
+        +speakerHeader('Douglas Crockford', '/img/speakers/douglas-crockford.jpg', '')
+        p
           | Douglas Crockford is known as The JavaScript Guy. He’s famous not only for his 
           | O’Reilly book JavaScript: The Good Parts but even more so as the visionary behind 
-          | the JSON data format as well as the JSLint tool.
-        .image
-          img(src='/img/speakers/douglas-crockford.jpg', alt='Douglas Crockford')
-        .name
-          a(href='http://www.crockford.com/') Douglas Crockford
-          a(href='http://www.paypal.com') Paypal
-          p San Francisco, US
-      li.divider
+          | the JSON data format as well as the JSLint tool. 
+
       li
-        .name
-          a(href='http://www.devthought.com/') Guillermo Rauch
-          a(href='http://automattic.com/') Automattic
-          p San Francisco, US
-        .image
-          img(src='/img/speakers/guillermo-rauch.jpg', alt='Guillermo Rauch')
-        .description
+        +speakerHeader('Guillermo Rauch', '/img/speakers/guillermo-rauch.jpg', '')
+        p
           | Guillermo is the creator of 
           a(href='http://socket.io/') socket.io
           | . Enthusiastic entepreneur, CTO and Founder of 
           a(href='https://cloudup.com/') Cloudup 
           |  and previously Co-founder of 
           a(href='https://www.learnboost.com') Learn Boost
-      li.divider
+
       li
-        .description
+        +speakerHeader('Jeremy Ashkenas', '/img/speakers/jeremy-ashkenas.jpg', '')
+        p
           | Jeremy Ashkenas is a Graphics Editor at The New York Times. 
           | He created the 
           a(href='http://coffeescript.org/') CoffeeScript 
@@ -62,19 +54,10 @@ block content
           | , among other open-source projects. He spent all of 
           | 2013 on the road, and previously worked on DocumentCloud.org, 
           | helping news organizations analyze and publish the primary source documents behind the news. 
-        .image
-          img(src='/img/speakers/jeremy-ashkenas.jpg', alt='Jeremy Ashkenas')
-        .name
-          a(href='http://ashkenas.com/') Jeremy Ashkenas
-          p New York, US
-      li.divider
+
       li
-        .name
-          a(href='http://substack.net/') James Halliday (substack)
-          p San Francisco, US
-        .image
-          img(src='/img/speakers/james-halliday.jpg', alt='James Halliday')
-        .description
+        +speakerHeader('James Halliday', '/img/speakers/james-halliday.jpg', '')
+        p
           | James is a unix philosopher and aspiring mad scientist. 
           | He writes tiny open source libraries. 
           | He co-founded 
@@ -84,28 +67,90 @@ block content
           | and previously built 
           | underwater robots in Alaska. He also draws silly cartoons and 
           | sometimes they end up on t-shirts
-      li.divider
+
       li
-        .description
+        +speakerHeader('Forbes Lindesay', '/img/speakers/forbes-lindesay.jpg', '')
+        p
           | An open source JavaScript developer working on projects like 
           a(href='http://jade-lang.com/') jade 
           | and 
           a(href='https://github.com/ForbesLindesay/browserify-middleware') browserify-middleware
           | , currently working as a software 
           | engineer at Red Gate.
-        .image
-          img(src='/img/speakers/forbes-lindesay.jpg', alt='Forbes Lindesay')
-        .name
-          a(href='http://www.forbeslindesay.co.uk/about') Forbes Lindesay
-          | Cambridge, UK
-      li.divider
+
       li
-        .description More speakers coming soon.
-        .image
-          span
-        .name
-            a(href='http://tickets.jsconf.uy/') Buy tickets!
-    a.buy(href='http://tickets.jsconf.uy/') Buy tickets!
+        +speakerHeader('Benoit Marchant', '/img/speakers/beonit-marchant.jpg', '')
+        p
+          | Benoit Marchant is a seasoned software engineer, 
+          | including 10 years at Apple. His work focuses on 
+          | bringing innovative, native-class, user experience 
+          | to web applications.  He created the open-source (BSD) 
+          a(href='http://montagejs.org/') MontageJS HTML5 Framework 
+          | to deliver mobile experiences 
+          | that match consumers’s expectations. 
+
+      li
+        +speakerHeader('Julián Duque', '/img/speakers/julian-duque.png', '')
+        p
+          | Julian is a Developer by Passion, Support and Community 
+          | Evangelist at 
+          a(href='http://nodejitsu.com') Nodejitsu, 
+          | Co-Organizer of JSConf Colombia 
+          | and MedellinJS.
+
+      li
+        +speakerHeader('Federico Silva', '/img/speakers/federico-silva.png', '')
+        p
+          | En los 80s usaba `goto`s, en los 90s manipulaba objetos y en este siglo
+          | se redimió revoleando funciones en javascript, lo cual lo impulsó a
+          | aprender más sobre el paradigma funciona.
+
+      li
+        +speakerHeader('James MacAulay', '/img/speakers/james-macaulay.png', '')
+        p
+          | Shopify is a commerce platform that allows anyone to easily sell online, 
+          | at their retail location, and everywhere in between. Shopify offers a 
+          | professional online storefront, a payment solution to accept credit cards, 
+          | and a point of sale system to power retail sales. For more information, visit 
+          a(href='www.shopify.com') www.shopify.com.
+
+      li
+        +speakerHeader('Thorsten Lorenz', '/img/speakers/thorsten-lorenz.png', '')
+        p
+          | I have been working with nodejs and JavaScript for over 2 years mostly 
+          | in my spare time and lately full time at 
+          a(href='http://www.condenast.com/') Condé Nast.
+          |
+          | The fast turnaround from idea to working module has proven addictive 
+          | for me and led to lots of modules which ended up on github and/or npm. 
+          | I also contribute to other awesome open source efforts like 
+          a(href='https://github.com/substack/node-browserify') browserify 
+          | to which I added source map support.
+
+      li
+        +speakerHeader('Andrey Listochkin', '/img/speakers/andrey-listochkin.jpeg', '')
+        p
+          | Andrey is a Russian-born software developer from Ukraine and a 
+          | senior architect at 
+          a(href='http://door3.com') DOOR3. 
+          | He's been building web applications 
+          | for more than seven years with a short break when he worked on a 
+          | mobile browser instead. He's an active member of the Ukrainian 
+          | frontend community and speaks at many local conferences and meetups.
+
+      li
+        +speakerHeader('Jean Carlo Nascimento', '/img/speakers/jean-nascimento.png', '')
+        p
+          | Jean Carlo Nascimento, aka “Suissa”, is an internet enthusiast since its 
+          | 10 years old. Is professional of web development for 9 years, today uses 
+          | HTML5, CSS3, AngularJS, Node.js and MongoDB. Is currently founder of 
+          | Webschool.io and Suissa Corp, also has personal projects such as 
+          a(href='http://javascriptbrasil.com') JavaScript Brasil, 
+          a(href='http://nodejsbrasil.com.br') NodeJS Brasil, 
+          a(href='http://nosqlbr.com.br') NoSQL Brasil, 
+          | among others
+
+
   .sponsors
     h2#sponsors Sponsors
     ul.sponsors-g
@@ -114,15 +159,16 @@ block content
       +sponsor('Globant', 'img/sponsors/globant.jpg', 'http://globant.com')
       +sponsor('GitHub', 'img/sponsors/github.png', 'http://github.com')
       +sponsor('Mozilla', 'img/sponsors/mozilla.png', 'http://mozilla.com')
+      +sponsor('Automattic', 'img/sponsors/automattic.png', 'http://automattic.com')
 
     ul.sponsors-b
       +sponsor('Strongloop', 'img/sponsors/strongloop.jpg', 'http://strongloop.com')
       +sponsor('Sophilabs', 'img/sponsors/sophilabs.jpg', 'http://sophilabs.com')
 
     ul.sponsors-sp
-      +sponsor('Shopify', 'img/sponsors/shopify.png', 'http://shopify.com')
+      +sponsor('Código del sur', 'img/sponsors/codigos_del_sur.png', 'http://codigodelsur.com')
       +sponsor('Jetbrains', 'img/sponsors/Jetbrains.png', 'http://jetbrains.com')
-      +sponsor('Códigos del sur', 'img/sponsors/codigos_del_sur.png', 'http://codigosdelsur.com')
+      +sponsor('Shopify', 'img/sponsors/shopify.png', 'http://shopify.com')
 
     h3 Interested?
     .container
