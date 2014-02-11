@@ -544,10 +544,9 @@ ul.thumbs li span {
   width: 240px;
 }
 
-.sponsors .sponsors-gold li{line-height: 320px; height: 320px; width: 320px;}
-.sponsors .sponsors-silver li{line-height: 280px; height: 280px; width: 280px;}
-.sponsors .sponsors-bronze li{line-height: 240px; height: 240px; width: 240px;}
-.sponsors .sponsors-startup li{line-height: 180px; height: 180px; width: 180px;}
+.sponsors .sponsors-gold li{line-height: 280px; height: 280px; width: 280px;}
+.sponsors .sponsors-silver li{line-height: 240px; height: 240px; width: 240px;}
+.sponsors .sponsors-bronze li{line-height: 180px; height: 180px; width: 180px;}
 .sponsors .sponsors-supporter li{line-height: 140px; height: 140px; width: 140px;}
 
 .sponsors ul li a {

@@ -4,7 +4,6 @@ exports.init = function (app) {
     res.render('index', {});
   });
 
-
   app.get('/proposals', function (req, res) {
     res.render('proposals-closed', {});
   });
@@ -12,7 +11,6 @@ exports.init = function (app) {
   app.get('/schedule', function (req, res) {
     res.render('schedule', {});
   });
-
 
   app.get('/wow', function (req, res) {
     res.render('doge', {});
