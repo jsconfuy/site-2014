@@ -37,7 +37,10 @@
 
       if ($(document).scrollTop() > $('.sponsors').offset().top - 300) {
         $('.sponsors li:not(.active)').each(function (index) {
-          $(this).addClass('active');
+          var $el = $(this);
+          window.setTimeout(function () {
+            $el.addClass('active');
+          }, index * 100);
         });
       }
     };
