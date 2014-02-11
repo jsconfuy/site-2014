@@ -517,7 +517,7 @@ ul.thumbs li span {
   display: block;
   width: 200px;
   height: 200px;
-  border-radius: 200px;  
+  border-radius: 200px;
 }
 
 .speakers .image span {
@@ -733,45 +733,49 @@ ul.thumbs li span {
  *           speakers                  |
  *  ===================================|
  */
-.speakers_list {
+.speakers-list {
   margin: 0 auto;
   padding: 0;
   text-align: center;
 }
 
-.speakers_list li {
+.speakers-list li {
   display: inline-block;
   margin: 40px;
   vertical-align: top;
   width: 200px;
 }
 
-.speakers_list li h5 {
+.speakers-list li h5 {
   font-weight: 600;
 }
 
-.speakers_list li h5, .speakers_list li h6 {
+.speakers-list li h5,
+.speakers-list li h6 {
   font-size: 23px;
   color: #333;
   margin: 0 auto;
   padding: 16px;
-  text-align: center;
+  text-aligni: center;
 }
 
-.speakers_list li img {
-  background: #F6F6F6;
+.speakers-list li h5 {
+  padding: 0;
+  height: 68px;
+  line-height: 25px;
+}
+
+.speakers-list li img {
   border-radius: 200px;
   display: block;
   height: 200px;
   margin: auto auto;
-  padding: 10px;
   width: 200px;
 }
 
-.speakers_list li p {
-  color: #999;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 14px;
+.speakers-list li p {
+  color: #333;
+  font-size: 16px;
   font-weight: 300;
   text-align: left;
   word-wrap: break-word;

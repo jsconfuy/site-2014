@@ -23,14 +23,13 @@ block content
   .speakers
     h2#speakers Speakers
     h3 Meet the speakers
-    ul.speakers_list
+    ul.speakers-list
       li
-        +speakerHeader('Douglas Crockford', '/img/speakers/douglas-crockford.jpg', '')
+        +speakerHeader('Douglas Crockford', '/img/speakers/douglas-crockford.jpg')
         p
           | Douglas Crockford is known as The JavaScript Guy. He’s famous not only for his 
           | O’Reilly book JavaScript: The Good Parts but even more so as the visionary behind 
-          | the JSON data format as well as the JSLint tool. 
-
+          | the JSON data format as well as the JSLint tool.
       li
         +speakerHeader('Guillermo Rauch', '/img/speakers/guillermo-rauch.jpg', '')
         p
@@ -40,6 +39,7 @@ block content
           a(href='https://cloudup.com/') Cloudup 
           |  and previously Co-founder of 
           a(href='https://www.learnboost.com') Learn Boost
+          | .
 
       li
         +speakerHeader('Jeremy Ashkenas', '/img/speakers/jeremy-ashkenas.jpg', '')
@@ -66,7 +66,7 @@ block content
           a(href='http://ci.testling.com/') testling.com 
           | and previously built 
           | underwater robots in Alaska. He also draws silly cartoons and 
-          | sometimes they end up on t-shirts
+          | sometimes they end up on t-shirts.
 
       li
         +speakerHeader('Forbes Lindesay', '/img/speakers/forbes-lindesay.jpg', '')
@@ -112,7 +112,8 @@ block content
           | at their retail location, and everywhere in between. Shopify offers a 
           | professional online storefront, a payment solution to accept credit cards, 
           | and a point of sale system to power retail sales. For more information, visit 
-          a(href='www.shopify.com') www.shopify.com.
+          a(href='www.shopify.com') www.shopify.com
+          | .
 
       li
         +speakerHeader('Thorsten Lorenz', '/img/speakers/thorsten-lorenz.png', '')
@@ -120,7 +121,6 @@ block content
           | I have been working with nodejs and JavaScript for over 2 years mostly 
           | in my spare time and lately full time at 
           a(href='http://www.condenast.com/') Condé Nast.
-          |
           | The fast turnaround from idea to working module has proven addictive 
           | for me and led to lots of modules which ended up on github and/or npm. 
           | I also contribute to other awesome open source efforts like 
@@ -148,7 +148,7 @@ block content
           a(href='http://javascriptbrasil.com') JavaScript Brasil, 
           a(href='http://nodejsbrasil.com.br') NodeJS Brasil, 
           a(href='http://nosqlbr.com.br') NoSQL Brasil, 
-          | among others
+          | among others.
 
 
   .sponsors
@@ -162,12 +162,12 @@ block content
       +sponsor('Automattic', 'img/sponsors/automattic.png', 'http://automattic.com')
 
     ul.sponsors-b
-      +sponsor('Strongloop', 'img/sponsors/strongloop.jpg', 'http://strongloop.com')
       +sponsor('Sophilabs', 'img/sponsors/sophilabs.jpg', 'http://sophilabs.com')
+      +sponsor('Strongloop', 'img/sponsors/strongloop.jpg', 'http://strongloop.com')
 
     ul.sponsors-sp
       +sponsor('Código del sur', 'img/sponsors/codigos_del_sur.png', 'http://codigodelsur.com')
-      +sponsor('Jetbrains', 'img/sponsors/Jetbrains.png', 'http://jetbrains.com')
+      +sponsor('Jetbrains', 'img/sponsors/jetbrains.png', 'http://jetbrains.com')
       +sponsor('Shopify', 'img/sponsors/shopify.png', 'http://shopify.com')
 
     h3 Interested?
