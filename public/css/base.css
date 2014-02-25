@@ -784,53 +784,49 @@ ul.thumbs li span {
 }
 
 /********************
-    Schedule Page
+    agenda Page
 ********************/
 
-.schedule {
+.agenda {
   margin-bottom: 40px;
 }
 
-.schedule table {
+.agenda table {
   width: 100%;
   font-size: 20px;
 }
 
-.schedule table th {
+.agenda table th {
   font-family: 'chunkfiveroman';
 }
 
-.schedule table th,
-.schedule table td {
+.agenda table th,
+.agenda table td {
   padding: 6px;
   vertical-align: top;
 }
 
-.schedule table th {
+.agenda table th {
   text-align: center;
 }
 
-.schedule table td.time {
+.agenda table td.time {
   width: 60px;
 }
 
-.schedule table td:first-child {
+.agenda table td:first-child {
   text-align: left;
 }
 
-.schedule table td:last-child {
+.agenda table td:last-child {
   text-align: right;
 }
 
-.schedule table .break {
-  background-color: #eee;
-}
-
-.schedule table .full {
+.agenda table .full {
   text-align: center;
 }
 
-.schedule table .pictures img {
+.agenda table .pictures img {
   display: block;
   width: 32px;
   height: 32px;
@@ -838,25 +834,41 @@ ul.thumbs li span {
   margin: 1px 0;
 }
 
-.schedule table .talk .pictures {
+.agenda table .talk .pictures,
+.agenda table .keynote .pictures {
   float: left;
   width: 32px;
 }
 
-.schedule table .workshop .pictures {
+.agenda table .workshop .pictures {
   float: right;
   width: 32px;
 }
 
-.schedule table .talk h3,
-.schedule table .workshop h3 {
+.agenda table .talk h3,
+.agenda table .workshop h3,
+.agenda table .keynote h3 {
   text-align: left;
   font-size: 20px;
   margin: 0 0 0 40px;
 }
 
-.schedule table .talk p,
-.schedule table .workshop p {
+.agenda table .break {
+  background-color: #f6f6f6;
+}
+
+.agenda table .keynote {
+	background-color: rgba(93, 173, 226, 0.4);
+}
+
+.agenda table .keynote h3 {
+  color: #000;
+}
+
+
+.agenda table .talk p,
+.agenda table .keynote p,
+.agenda table .workshop p {
   text-align: left;
   font-size: 20px;
   margin: 0 0 0 40px;

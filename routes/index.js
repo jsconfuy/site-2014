@@ -8,8 +8,8 @@ exports.init = function (app) {
     res.render('proposals-closed', {});
   });
 
-  app.get('/schedule', function (req, res) {
-    res.render('schedule', {});
+  app.get('/agenda', function (req, res) {
+    res.render('agenda', {});
   });
 
   app.get('/wow', function (req, res) {

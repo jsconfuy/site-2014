@@ -1,8 +1,8 @@
 extends base
 
 block content
-  .schedule
-    h2 Schedule
+  .agenda
+    h2 Agenda
     .container
       .row
         .col-md-8.col-md-offset-2
@@ -14,8 +14,7 @@ block content
                 th
               tr
                 th
-                th Talks
-                th Workshops
+                th(colspan="2") Talks
                 th
             tbody
               tr
@@ -28,56 +27,82 @@ block content
                 td.time 14:00
               tr
                 td.time 14:15
-                td.talk
+                td.keynote(colspan="2")
                   .pictures
                     a(href='/#Guillermo Rauch', title='Guillermo Rauch')
                       img(src='/img/speakers/guillermo-rauch.jpg')
                   h3 Socket.io
-                td.empty
                 td.time 14:15
               tr
-                td.time 14:45
-                td.break MiniBreak
-                td.empty
-                td.time 14:45
-              tr
                 td.time 14:50
-                td.talk
+                td.talk(colspan="2")
                   .pictures
                     a(href='/#Forbes Lindesay', title='Forbes Lindesay')
                       img(src='/img/speakers/forbes-lindesay.jpg')
                   h3 Jade: A templating language
-                td.empty
                 td.time 14:50
               tr
                 td.time 15:20
-                td.break Break
-                td.empty
+                td.break(colspan="2") Break
                 td.time 15:20
               tr
                 td.time 15:35
-                td.talk
+                td.talk(colspan="2")
                   .pictures
                     a(href='/#Andrey Listochkin', title='Andrey Listochkin')
                       img(src='/img/speakers/andrey-listochkin.jpeg')
                   h3 Raise the Baseline
-                td.empty
                 td.time 15:35
               tr
-                td.time 16:30
-                td.break MiniBreak
-                td.empty
-                td.time 16:30
+                td.time 16:10
+                td.talk(colspan="2")
+                  .pictures
+                    a(href='/#Jú Gonçalves', title='Jú Gonçalves')
+                      img(src='/img/speakers/ju-goncalves.jpg')
+                  h3 Improving client-side apps' performance with Facebook's React
+                td.time 16:10
               tr
-                td.time 16:35
-                td.talk Talk #4
-                td.empty
-                td.time 16:35
+                td.time 16:40
+                td.break(colspan="2") Break
+                td.time 16:40
               tr
-                td.time 17:05
-                td.break Break
-                td.empty
-                td.time 17:05
+                td.time 16:55
+                td.talk(colspan="2")
+                  .pictures
+                    a(href='/#Lenny Markus', title='Lenny Markus')
+                      img(src='/img/speakers/lenny-markus.jpg')
+                  h3 Building for scale with KrakenJS
+                td.time 16:55
+              tr
+                td.time 17:30
+                td.talk(colspan="2")
+                  .pictures
+                    a(href='/#Federico Silva', title='Federico Silva')
+                      img(src='/img/speakers/federico-silva.png')
+                  h3 Functional Javascript
+                td.time 17:30
+              tr
+                td.time 18:00
+                td.break(colspan="2") Break
+                td.time 18:00
+              tr
+                td.time 18:15
+                td.talk(colspan="2")
+                  .pictures
+                  h3 &lt; to be announced &gt;
+                td.time 18:15
+              tr
+                td.time 18:50
+                td.keynote(colspan="2")
+                  .pictures
+                    a(href='/#Jeremy Ashkenas', title='Jeremy Ashkenas')
+                      img(src='/img/speakers/jeremy-ashkenas.jpg')
+                  h3 Backbone.js
+                td.time 18:50
+              tr
+                td.time 19:35
+                td.full.break(colspan="2") Close
+                td.time 19:35
             thead
               tr
                 th
