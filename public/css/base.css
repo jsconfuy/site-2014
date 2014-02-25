@@ -877,11 +877,16 @@ ul.thumbs li span {
 }
 
 .agenda table .talk h3,
-.agenda table .workshop h3,
 .agenda table .keynote h3 {
   text-align: left;
   font-size: 20px;
   margin: 0 0 0 40px;
+}
+
+.agenda table .workshop h3 {
+  text-align: right;
+  font-size: 20px;
+  margin: 0 40px 0 0;
 }
 
 .agenda table .break {
@@ -892,8 +897,8 @@ ul.thumbs li span {
 	background-color: rgba(93, 173, 226, 0.4);
 }
 
-.agenda table .keynote h3 {
-  color: #000;
+.agenda table .workshop {
+	background-color: rgba(20, 255, 20, 0.4);
 }
 
 
