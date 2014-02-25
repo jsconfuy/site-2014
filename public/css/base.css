@@ -741,13 +741,9 @@ ul.thumbs li span {
 
 .speakers-list li {
   display: inline-block;
-  margin: 40px;
+  margin: 0 40px 40px 40px;
   vertical-align: top;
   width: 200px;
-}
-
-.speakers-list li h5 {
-  font-weight: 600;
 }
 
 .speakers-list li h5,
@@ -760,8 +756,10 @@ ul.thumbs li span {
 }
 
 .speakers-list li h5 {
-  padding: 0;
   height: 68px;
+  font-weight: 600;
+  margin-top: 40px;
+  padding: 0;
   line-height: 25px;
 }
 
