@@ -1,6 +1,7 @@
 extends base
 include mixins/sponsor
 include mixins/speaker
+include mixins/organizer
 
 block top
   .slider
@@ -259,6 +260,17 @@ block content
         .col-md-4.col-md-offset-4
           p Contact us at 
             a(href='mailto:hola@jsconf.uy') hola@jsconf.uy
+
+  .organizers
+    h2#organizers Organizers
+    ul.organizers-list
+      +organizer('Pablo Ricco', '/img/organizers/pricco.jpeg', 'https://twitter.com/pricco')
+      +organizer('Luis Alberto Cal', '/img/organizers/lucho99.jpeg', 'https://twitter.com/_luisalbertocal')
+      +organizer('Rodrigo Espinosa', '/img/organizers/espinosacurbelo.jpeg', 'https://twitter.com/espinosacurbelo')
+      +organizer('Gabriel Chertok', '/img/organizers/cherta.jpeg', 'https://twitter.com/iamcherta')
+      +organizer('Pablo Dejuan', '/img/organizers/pdejuan.jpeg', 'https://twitter.com/pdejuan')
+      +organizer('Sebastian Sassi', '/img/organizers/sebauy.png', 'https://twitter.com/sebasuy')
+      +organizer('Martin Prunell', '/img/organizers/MartinPrunell.jpeg', 'https://twitter.com/MartinPrunell')
   .venue
     h2#venue The venue
     h3 Antel Auditorium
