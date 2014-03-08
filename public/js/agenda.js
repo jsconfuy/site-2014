@@ -14,9 +14,11 @@
     $('.talk-summary, .workshop-summary').hide();
 
     $('.talk').each(function () {
-      var btn = $('<a />').attr('href', '#').addClass('more-info').text('More information...');
-      btn = $('<small />').append(btn);
-      $(this).append(btn);
+      if ($(this).children('.talk-summary').length > 0) {
+        var btn = $('<a />').attr('href', '#').addClass('more-info').text('More information...');
+        btn = $('<small />').append(btn);
+        $(this).append(btn);
+      }
     });
   });
 

@@ -915,3 +915,7 @@ ul.thumbs li span {
   font-size: 20px;
   margin: 0 0 0 40px;
 }
+
+.agenda .talk .talk-summary {
+  font-size: 0.7em;
+}
