@@ -898,9 +898,15 @@ ul.thumbs li span {
 }
 
 .agenda table .workshop {
-	background-color: rgba(20, 255, 20, 0.4);
+	background-color: rgba(197, 243, 255, 0.4);
 }
 
+.agenda table .workshop.active {
+  -webkit-box-shadow: -5px -4px 0 0px rgba(0, 0, 0, .3);
+     -moz-box-shadow: -5px -4px 0 0px rgba(0, 0, 0, .3);
+       -o-box-shadow: -5px -4px 0 0px rgba(0, 0, 0, .3);
+          box-shadow: -5px -4px 0 0px rgba(0, 0, 0, .3);
+}
 
 .agenda table .talk p,
 .agenda table .keynote p,
