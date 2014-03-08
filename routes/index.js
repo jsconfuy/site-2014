@@ -45,6 +45,10 @@ exports.init = function (app) {
     res.render('hotels', {});
   });
 
+  app.get('/venue', function (req, res) {
+    res.render('venue', {});
+  });
+
   app.get('/code-of-conduct', function (req, res) {
     res.render('code-of-conduct', {});
   });
