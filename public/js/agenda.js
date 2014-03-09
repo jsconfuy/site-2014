@@ -15,9 +15,14 @@
 
     $('.talk').each(function () {
       if ($(this).children('.talk-summary').length > 0) {
-        var btn = $('<a />').attr('href', '#').addClass('more-info').text('More information...');
-        btn = $('<small />').append(btn);
-        $(this).append(btn);
+        var $btn, $h3;
+
+        $btn = $('<a />').attr('href', '#');
+        $btn.attr('title', 'More information...');
+        $btn.addClass('more-info').text('+');
+
+        $h3 = $(this).find('h3');
+        $h3.text($h3.text() + ' ').append($btn);
       }
     });
   });
@@ -26,7 +31,7 @@
     var $parent = $(this).parent().parent('.talk');
     event.preventDefault();
     $parent.find('.talk-summary').slideToggle();
-    $(this).toggleText('More information...', 'Close');
+    $(this).toggleText('+', '-');
   });
 
 }(jQuery));
