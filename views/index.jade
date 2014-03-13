@@ -21,6 +21,10 @@ block top
         span Antel Auditorium
 
 block content
+  .twitter-box
+    a.twitter-timeline(href='https://twitter.com/search?q=%23JSConfUY', data-widget-id='444208305896816641') Tweets about "#JSConfUY"
+    script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
   .speakers
     h2#speakers Speakers
     h3 Meet the speakers
@@ -303,6 +307,7 @@ block content
     ul.sponsors-silver
       +sponsor('Neo', '/img/sponsors/neo.png', 'http://www.neo.com')
       +sponsor('NetSuite', '/img/sponsors/netsuite.png', 'http://netsuite.com')
+      +sponsor('WyeWorks', '/img/sponsors/wyeworks.png', 'http://www.wyeworks.com')
 
     ul.sponsors-bronze
       +sponsor('Sophilabs', '/img/sponsors/sophilabs.jpg', 'http://sophilabs.com')

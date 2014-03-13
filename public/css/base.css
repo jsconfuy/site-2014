@@ -729,6 +729,12 @@ ul.thumbs li span {
   margin-bottom: 40px;
 }
 
+.twitter-box {
+  width: 520px;
+  height: 600px;
+  margin: 120px auto 0 ;
+}
+
 /** ===================================|
  *           speakers                  |
  *  ===================================|
